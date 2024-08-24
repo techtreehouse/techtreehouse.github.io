@@ -1,1 +1,7 @@
+---
+layout: default
+title: ads
+permalink: /ads.txt
+---
+
 google.com, pub-9579104518546678, DIRECT, f08c47fec0942fa0
