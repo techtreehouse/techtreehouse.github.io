@@ -2,8 +2,8 @@
 name: "Tech Treehouse"
 title: "Tech Treehouse"
 description: "A place to learn and explore more about tech!"
-logo: 'assets/images/techtreehouse.jpg'
-favicon: 'assets/images/techtreehouse.jpg'
+logo: 'assets/images/techtreehouse.jpeg'
+favicon: 'assets/images/techtreehouse.jpeg'
 baseurl: ''
 google_analytics: 'UA-46278016-1'
 disqus: 'demowebsite'
