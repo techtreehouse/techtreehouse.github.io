@@ -2,8 +2,8 @@
 name: "Tech Treehouse"
 title: "Tech Treehouse"
 description: "Jekyll template, Medium styled, free for bloggers."
-logo: 'assets/images/logo.png'
-favicon: 'assets/images/logo.png'
+logo: 'assets/images/techtreehouse.jpg'
+favicon: 'assets/images/techtreehosue.jpg'
 baseurl: ''
 google_analytics: 'UA-46278016-1'
 disqus: 'demowebsite'
