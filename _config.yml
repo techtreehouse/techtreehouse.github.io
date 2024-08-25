@@ -5,7 +5,7 @@ description: "A place to learn and explore more about tech!"
 logo: 'assets/images/techtreehouseicon.jpg'
 favicon: 'assets/images/techtreehouse.jpeg'
 baseurl: ''
-google_analytics: '8602283660'
+google_analytics: 'G-XC8EFLL2E5'
 disqus: 'demowebsite'
 mailchimp-list: 'https://wowthemes.us11.list-manage.com/subscribe/post?u=8aeb20a530e124561927d3bd8&amp;id=8c3d2d214b'
 include: ["_pages"]
