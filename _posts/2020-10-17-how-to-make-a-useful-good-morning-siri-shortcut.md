@@ -2,9 +2,8 @@
 layout: post
 title:  "How to make a useful "Good Morning" Siri Shortcut"
 author: Tech Treehouse
-categories: [ Youube, tutorial ]
+categories: [ Youtube, tutorial ]
 image: assets/images/12.jpg
-hidden: false
 ---
 
 Director Roland Suso Richter's enigmatic psychological thriller (direct to video/DVD) was based upon screenwriter Michael Cooney's own play "Point of Death" - a title that gave away the film's entire plot twist premise.
