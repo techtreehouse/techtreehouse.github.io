@@ -21,7 +21,7 @@ authors:
     email: techtreehouseyt@gmail.com
     web: https://techtreehouse.github.io
     #twitter: https://twitter.com/wowthemesnet
-    description: "Owner and Author of Tech Treehouse, a place to learn and explore more about tech!"
+    description: "Owner and Author of Tech Treehouse, your go-to destination to learn and explore more about tech!"
 # Plugins
 plugins:
   - jekyll-paginate
