@@ -16,6 +16,6 @@ Time stamps:<br>
 
 [Please subscribe!](https://youtube.com/techtreehouse/?sub_confirmation=1)
 
-#UsefulSiriShortcuts
-#SiriShortcuts
-#TechTreehouse
+#UsefulSiriShortcuts<br>
+#SiriShortcuts<br>
+#TechTreehouse<br>
