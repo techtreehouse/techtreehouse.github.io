@@ -6,6 +6,8 @@ categories: [ Youtube, tutorial ]
 image: assets/images/goodmorning.jpg
 ---
 
+[How to make a useful "Good Morning" Siri Shortcut](https://www.youtube.com/watch?v=Sdz9vfhinbY)
+
 This video will teach you how to make a very useful Siri shortcut to run when you wake up!
 
 Time stamps:<br>
