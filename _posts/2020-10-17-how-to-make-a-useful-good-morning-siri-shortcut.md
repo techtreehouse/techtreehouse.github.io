@@ -1,6 +1,6 @@
 ---
 layout: post
-title:  "How to make a useful "Good Morning" Siri Shortcut"
+title:  "How to make a useful \"Good Morning\" Siri Shortcut"
 author: Tech Treehouse
 categories: [ Youtube, tutorial ]
 image: assets/images/12.jpg
