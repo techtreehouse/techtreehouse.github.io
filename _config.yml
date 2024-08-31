@@ -16,6 +16,7 @@ authors:
   Tech Treehouse:
     name: Tech Treehouse
     display_name: Tech Treehouse
+    #gravatar id is just the sha256 of email
     gravatar: 7b25e1bc36f9063fd816bb602f430829595eeaec74ae1c4a0212464bf320ec7a
     email: techtreehouseyt@gmail.com
     web: https://techtreehouse.github.io
