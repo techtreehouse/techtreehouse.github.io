@@ -8,10 +8,10 @@ image: assets/images/goodmorning.jpg
 
 This video will teach you how to make a very useful Siri shortcut to run when you wake up!
 
-Time stamps:
-0:00 Introduction
-0:29 How to make the shortcut
-3:46 Optional feature
+Time stamps:<br>
+0:00 Introduction<br>
+0:29 How to make the shortcut<br>
+3:46 Optional feature<br>
 4:44 Ending
 
 [Please subscribe!](https://youtube.com/techtreehouse/?sub_confirmation=1)
