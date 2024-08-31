@@ -1,7 +1,7 @@
 # Site
 name: "Tech Treehouse"
 title: "Tech Treehouse"
-description: "A place to learn and explore more about tech!"
+description: "Your go-to destination to learn and explore more about tech!"
 logo: 'assets/images/techtreehouse.jpeg'
 favicon: 'assets/images/techtreehouseicon.jpg'
 baseurl: ''
