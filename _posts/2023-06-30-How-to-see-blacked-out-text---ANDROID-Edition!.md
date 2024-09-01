@@ -4,6 +4,7 @@ title:  "How to see blacked out text - ANDROID Edition!"
 author: Tech Treehouse
 categories: [ Youtube, tutorial ]
 image: assets/images/How-to-see-blacked-out-text---ANDROID-Edition!.jpg
+featured: true
 ---
 
 [How to see blacked out text - ANDROID Edition!](https://youtube.com/watch?v=3cQBngElXSo)
