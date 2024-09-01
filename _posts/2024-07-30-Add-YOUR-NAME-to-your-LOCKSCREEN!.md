@@ -4,6 +4,7 @@ title:  "Add YOUR NAME to your LOCKSCREEN!"
 author: Tech Treehouse
 categories: [ Youtube, tutorial ]
 image: assets/images/Add-YOUR-NAME-to-your-LOCKSCREEN!.jpg
+featured: true
 ---
 
 [Add YOUR NAME to your LOCKSCREEN!](https://youtube.com/watch?v=LKHfG-YgHas)
