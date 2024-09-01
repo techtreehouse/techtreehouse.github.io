@@ -4,6 +4,7 @@ title:  "How to Bypass Paywalls - ANDROID Edition"
 author: Tech Treehouse
 categories: [ Youtube, tutorial ]
 image: assets/images/How-to-Bypass-Paywalls---ANDROID-Edition.jpg
+featured: true
 ---
 
 [How to Bypass Paywalls - ANDROID Edition](https://youtube.com/watch?v=pe_qZuaCIxI)
