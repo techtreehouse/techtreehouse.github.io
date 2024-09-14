@@ -40,7 +40,7 @@ comments: true
 
 <p>Your support helps me continue to create high-quality content and improve Tech Treehouse. If you find the resources helpful and want to contribute, here’s how you can help:</p>
 
-<a target="_blank" href="https://www.buymeacoffee.com/tech-treehouse" class="btn btn-danger">Buy me a coffee</a> <a target="_blank" href="https://youtube.com/techtreehouse" class="btn btn-warning">Subscribe on YouTube</a>
+<a target="_blank" href="https://www.buymeacoffee.com/techtreehouse" class="btn btn-danger">Buy me a coffee</a> <a target="_blank" href="https://youtube.com/techtreehouse" class="btn btn-warning">Subscribe on YouTube</a>
 
 </div>
 </div>
