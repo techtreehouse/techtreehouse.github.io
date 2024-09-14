@@ -41,13 +41,7 @@ comments: false
 <p>Your support helps me continue to create high-quality content and improve Tech Treehouse. If you find the resources helpful and want to contribute, here’s how you can help:</p>
 
 <div class="d-flex flex-column">
-    <a target="_blank" href="https://www.buymeacoffee.com/techtreehouse" class="btn" style="background-color: #daa520; color: white; border: none; margin-bottom: 10px;">
-        <i class="fas fa-coffee"></i> Buy me a coffee
-    </a> 
     <a target="_blank" href="https://www.buymeacoffee.com/techtreehouse" class="btn" style="background-color: #ffb700; color: white; border: none; margin-bottom: 10px;">
-        <i class="fas fa-coffee"></i> Buy me a coffee
-    </a> 
-    <a target="_blank" href="https://www.buymeacoffee.com/techtreehouse" class="btn" style="background-color: #ffdd00; color: white; border: none; margin-bottom: 10px;">
         <i class="fas fa-coffee"></i> Buy me a coffee
     </a> 
     <a target="_blank" href="https://youtube.com/techtreehouse" class="btn" style="background-color: #dd2c28; color: white; border: none;">
