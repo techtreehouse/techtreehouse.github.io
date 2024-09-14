@@ -42,6 +42,25 @@ comments: false
 
 <a target="_blank" href="https://www.buymeacoffee.com/techtreehouse" class="btn btn-danger">Buy me a coffee</a> <a target="_blank" href="https://youtube.com/techtreehouse" class="btn btn-warning">Subscribe on YouTube</a>
 
+<h5 class="mt-4">Stay Updated</h5>
+
+<p>Be the first to know about the latest content, updates, and news:</p>
+
+<ul>
+    <li><a target="_blank" href="https://youtube.com/TechTreehouse" class="btn btn-info">Follow on Twitter</a></li>
+    <li><a target="_blank" href="https://instagram.com/TechTreehouse" class="btn btn-secondary">Follow on Instagram</a></li>
+    <li><a target="_blank" href="https://linkedin.com/company/tech-treehouse" class="btn btn-primary">Connect on LinkedIn</a></li>
+</ul>
+
+<h5 class="mt-4">Join the Discussion</h5>
+
+<p>Engage with the Tech Treehouse community and share your thoughts:</p>
+
+<ul>
+    <li><a target="_blank" href="https://discord.gg/TechTreehouse" class="btn btn-success">Join our Discord</a></li>
+    <li><a target="_blank" href="https://reddit.com/r/TechTreehouse" class="btn btn-danger">Visit our Reddit</a></li>
+</ul>
+
 </div>
 </div>
 </div>
