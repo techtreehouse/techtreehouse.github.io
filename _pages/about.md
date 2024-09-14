@@ -54,6 +54,9 @@ comments: false
 <p>Be the first to know about the latest content, updates, and news:</p>
 
 <div class="d-flex flex-column">
+    <a target="_blank" href="https://twitter.com/TechTreehouse" class="btn" style="background-color: #007bff; color: white; border: none; margin-bottom: 10px;">
+        <i class="fab fa-twitter"></i> Follow on Twitter
+    </a>
     <a target="_blank" href="https://twitter.com/TechTreehouse" class="btn btn-info mb-2">
         <i class="fab fa-twitter"></i> Follow on Twitter
     </a>
