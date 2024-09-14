@@ -18,7 +18,7 @@ comments: false
 <ul>
     <li><strong>Step-by-Step Tutorials</strong>: From basic software tips and tricks to advanced methods on how to bypass paywalls, I provide clear, actionable instructions to help you learn and grow.</li>
     <li><strong>Tech Trends and Insights</strong>: Stay updated with the latest in technology, including emerging tools and industry news.</li>
-    <li><strong>Tech Trends and Insights</strong>: Unboxing videos provide valuable insights into new products, allowing you to see them in action before making a purchase. Whether you're a tech enthusiast or just curious about the latest gadgets, these reviews and videos are designed to help you make informed decisions.</li>
+    <li><strong>Unboxings</strong>: Unboxing videos provide valuable insights into new products, allowing you to see them in action before making a purchase. Whether you're a tech enthusiast or just curious about the latest gadgets, these reviews and videos are designed to help you make informed decisions.</li>
 </ul>
 
 <h3>My Mission</h3>
