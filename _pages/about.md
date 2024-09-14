@@ -44,6 +44,9 @@ comments: false
     <a target="_blank" href="https://www.buymeacoffee.com/techtreehouse" class="btn" style="background-color: #ffb700; color: white; border: none; margin-bottom: 10px;">
         <i class="fas fa-coffee"></i> Buy me a coffee
     </a> 
+    <a target="_blank" href="https://www.buymeacoffee.com/techtreehouse" class="btn" style="background-color: #ffdd00; color: white; border: none; margin-bottom: 10px;">
+        <i class="fas fa-coffee"></i> Buy me a coffee
+    </a> 
     <a target="_blank" href="https://youtube.com/techtreehouse" class="btn" style="background-color: #dd2c28; color: white; border: none;">
         <i class="fab fa-youtube"></i> Subscribe on YouTube
     </a>
