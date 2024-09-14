@@ -41,10 +41,10 @@ comments: false
 <p>Your support helps me continue to create high-quality content and improve Tech Treehouse. If you find the resources helpful and want to contribute, here’s how you can help:</p>
 
 <div class="d-flex flex-column">
-    <a target="_blank" href="https://www.buymeacoffee.com/tech-treehouse" class="btn btn-danger mb-2">
+    <a target="_blank" href="https://www.buymeacoffee.com/tech-treehouse" class="btn" style="background-color: #ffdd00; color: white; border: none; margin-bottom: 10px;">
         <i class="fas fa-coffee"></i> Buy me a coffee
     </a> 
-    <a target="_blank" href="https://youtube.com/techtreehouse" class="btn btn-warning">
+    <a target="_blank" href="https://youtube.com/techtreehouse" class="btn" style="background-color: #dd2c28; color: white; border: none;">
         <i class="fab fa-youtube"></i> Subscribe on YouTube
     </a>
 </div>
@@ -57,13 +57,10 @@ comments: false
     <a target="_blank" href="https://twitter.com/TechTreehouse" class="btn" style="background-color: #007bff; color: white; border: none; margin-bottom: 10px;">
         <i class="fab fa-twitter"></i> Follow on Twitter
     </a>
-    <a target="_blank" href="https://twitter.com/TechTreehouse" class="btn btn-info mb-2">
-        <i class="fab fa-twitter"></i> Follow on Twitter
-    </a>
-    <a target="_blank" href="https://instagram.com/TechTreehouse" class="btn btn-secondary mb-2">
+    <a target="_blank" href="https://instagram.com/TechTreehouse" class="btn" style="background-color: #007bff; color: white; border: none; margin-bottom: 10px;">
         <i class="fab fa-instagram"></i> Follow on Instagram
     </a>
-    <a target="_blank" href="https://linkedin.com/company/tech-treehouse" class="btn btn-primary">
+    <a target="_blank" href="https://linkedin.com/company/tech-treehouse" class="btn" style="background-color: #007bff; color: white; border: none;">
         <i class="fab fa-linkedin"></i> Connect on LinkedIn
     </a>
 </div>
@@ -73,13 +70,13 @@ comments: false
 <p>Engage with the Tech Treehouse community and share your thoughts:</p>
 
 <div class="d-flex flex-column">
-    <a target="_blank" href="https://discord.gg/TechTreehouse" class="btn btn-success mb-2">
+    <a target="_blank" href="https://discord.gg/TechTreehouse" class="btn" style="background-color: #007bff; color: white; border: none; margin-bottom: 10px;">
         <i class="fab fa-discord"></i> Join our Discord
     </a>
-    <a target="_blank" href="https://reddit.com/r/TechTreehouse" class="btn btn-danger">
+    <a target="_blank" href="https://reddit.com/r/TechTreehouse" class="btn" style="background-color: #007bff; color: white; border: none;">
         <i class="fab fa-reddit"></i> Visit our Reddit
     </a>
-
 </div>
+
 </div>
 </div>
