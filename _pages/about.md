@@ -40,26 +40,42 @@ comments: false
 
 <p>Your support helps me continue to create high-quality content and improve Tech Treehouse. If you find the resources helpful and want to contribute, here’s how you can help:</p>
 
-<a target="_blank" href="https://www.buymeacoffee.com/techtreehouse" class="btn btn-danger">Buy me a coffee</a> <a target="_blank" href="https://youtube.com/techtreehouse" class="btn btn-warning">Subscribe on YouTube</a>
+<div class="d-flex flex-column">
+    <a target="_blank" href="https://www.buymeacoffee.com/tech-treehouse" class="btn btn-danger mb-2">
+        <i class="fas fa-coffee"></i> Buy me a coffee
+    </a> 
+    <a target="_blank" href="https://youtube.com/techtreehouse" class="btn btn-warning">
+        <i class="fab fa-youtube"></i> Subscribe on YouTube
+    </a>
+</div>
 
 <h5 class="mt-4">Stay Updated</h5>
 
 <p>Be the first to know about the latest content, updates, and news:</p>
 
-<ul>
-    <li><a target="_blank" href="https://youtube.com/TechTreehouse" class="btn btn-info">Follow on Twitter</a></li>
-    <li><a target="_blank" href="https://instagram.com/TechTreehouse" class="btn btn-secondary">Follow on Instagram</a></li>
-    <li><a target="_blank" href="https://linkedin.com/company/tech-treehouse" class="btn btn-primary">Connect on LinkedIn</a></li>
-</ul>
+<div class="d-flex flex-column">
+    <a target="_blank" href="https://twitter.com/TechTreehouse" class="btn btn-info mb-2">
+        <i class="fab fa-twitter"></i> Follow on Twitter
+    </a>
+    <a target="_blank" href="https://instagram.com/TechTreehouse" class="btn btn-secondary mb-2">
+        <i class="fab fa-instagram"></i> Follow on Instagram
+    </a>
+    <a target="_blank" href="https://linkedin.com/company/tech-treehouse" class="btn btn-primary">
+        <i class="fab fa-linkedin"></i> Connect on LinkedIn
+    </a>
+</div>
 
 <h5 class="mt-4">Join the Discussion</h5>
 
 <p>Engage with the Tech Treehouse community and share your thoughts:</p>
 
-<ul>
-    <li><a target="_blank" href="https://discord.gg/TechTreehouse" class="btn btn-success">Join our Discord</a></li>
-    <li><a target="_blank" href="https://reddit.com/r/TechTreehouse" class="btn btn-danger">Visit our Reddit</a></li>
-</ul>
+<div class="d-flex flex-column">
+    <a target="_blank" href="https://discord.gg/TechTreehouse" class="btn btn-success mb-2">
+        <i class="fab fa-discord"></i> Join our Discord
+    </a>
+    <a target="_blank" href="https://reddit.com/r/TechTreehouse" class="btn btn-danger">
+        <i class="fab fa-reddit"></i> Visit our Reddit
+    </a>
 
 </div>
 </div>
