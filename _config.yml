@@ -3,7 +3,7 @@ name: "Tech Treehouse"
 title: "Tech Treehouse"
 description: "Your go-to destination to learn and explore more about tech!"
 logo: 'assets/images/techtreehouse.png'
-favicon: 'favicon.ico'
+favicon: 'assets/images/techtreehouse.png'
 baseurl: ''
 google_analytics: 'G-XC8EFLL2E5'
 disqus: 'demowebsite'
