@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Bypass Paywalls - IOS 15 METHOD!"
 author: Tech Treehouse
-categories: [ Youtube, tutorial ]
+categories: [ Youtube, tutorial, Bypass Paywall ]
 image: assets/images/How-to-Bypass-Paywalls---IOS-15-METHOD!.jpg
 ---
 
