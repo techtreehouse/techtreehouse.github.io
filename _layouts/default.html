@@ -17,29 +17,25 @@
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
 	
 <style>
-/* Inline CSS for Popup Responsiveness */
 @media (max-width: 768px) {
     .alertbar {
         padding: 10px;
-        font-size: 14px;
-        text-align: center;
     }
     .alertbar img {
-        width: 2.5em;
+        width: 2em;
+    }
+    .alertbar-content span {
+        font-size: 14px;
     }
     .alertbar form {
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-    }
-    .alertbar input[type="email"] {
         width: 100%;
-        max-width: 300px;
-        margin-bottom: 10px;
     }
+    .alertbar input[type="email"],
     .alertbar input[type="submit"] {
         width: 100%;
         max-width: 300px;
+        padding: 8px;
+        font-size: 14px;
     }
 }
 </style>
@@ -143,16 +139,16 @@
 {% if site.mailchimp-list %}
 <!-- Bottom Alert Bar
 ================================================== -->
-<div class="alertbar" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f8f9fa; border-top: 1px solid #e7e7e7; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); z-index: 9999; padding: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center;">
-	<div class="container text-center">
-		<span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}" style="width: 3em; height: auto;"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
-        <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 600px;">
-    	<div class="mc-field-group" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
-        <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required style="padding: 8px; font-size: 14px; width: 100%; max-width: 300px; margin-bottom: 10px; box-sizing: border-box;">
-        <input type="submit" value="Subscribe" name="subscribe" class="heart" style="padding: 8px 16px; font-size: 14px; width: 100%; max-width: 300px; box-sizing: border-box;">
-    	</div>
-	</form>
-</div>
+<div class="alertbar" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f8f9fa; border-top: 1px solid #e7e7e7; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); z-index: 9999; padding: 15px; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 10px;">
+    <div class="alertbar-content" style="text-align: center;">
+        <span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}" style="width: 2.5em; height: auto;"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
+    </div>
+    <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate style="display: flex; flex-direction: column; align-items: center; width: 100%; max-width: 600px; gap: 10px;">
+        <div class="mc-field-group" style="display: flex; flex-direction: column; align-items: center; width: 100%;">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required style="padding: 10px; font-size: 14px; width: 100%; max-width: 300px; box-sizing: border-box;">
+            <input type="submit" value="Subscribe" name="subscribe" class="heart" style="padding: 10px 20px; font-size: 14px; width: 100%; max-width: 300px; box-sizing: border-box;">
+        </div>
+    </form>
 </div>
 {% endif %}
     
