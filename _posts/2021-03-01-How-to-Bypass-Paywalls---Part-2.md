@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Bypass Paywalls - Part 2"
 author: Tech Treehouse
-categories: [ Youtube, tutorial ]
+categories: [ Youtube, tutorial, Bypass Paywall ]
 image: assets/images/How-to-Bypass-Paywalls---Part-2.jpg
 ---
 
