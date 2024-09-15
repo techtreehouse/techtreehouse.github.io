@@ -2,7 +2,7 @@
 layout: post
 title:  "Bypass Paywalls For Free! - NEW METHOD"
 author: Tech Treehouse
-categories: [ Youtube, tutorial ]
+categories: [ Youtube, tutorial, Bypass Paywall ]
 image: assets/images/Bypass-Paywalls-For-Free!---NEW-METHOD.jpg
 ---
 
