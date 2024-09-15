@@ -15,7 +15,35 @@
 <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
 
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
-
+	
+<style>
+/* Inline CSS for Popup Responsiveness */
+@media (max-width: 768px) {
+    .alertbar {
+        padding: 10px;
+        font-size: 14px;
+        text-align: center;
+    }
+    .alertbar img {
+        width: 2.5em;
+    }
+    .alertbar form {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+    }
+    .alertbar input[type="email"] {
+        width: 100%;
+        max-width: 300px;
+        margin-bottom: 10px;
+    }
+    .alertbar input[type="submit"] {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+</style>
+	
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
 </head>
@@ -115,13 +143,13 @@
 {% if site.mailchimp-list %}
 <!-- Bottom Alert Bar
 ================================================== -->
-<div class="alertbar">
+<div class="alertbar" style="position: fixed; bottom: 0; left: 0; width: 100%; background-color: #f8f9fa; border-top: 1px solid #e7e7e7; box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); z-index: 9999; padding: 15px;">
 	<div class="container text-center">
 		<span><img src="{{ site.baseurl }}/{{ site.logo }}" alt="{{site.title}}" style="width: 3em; height: auto;"> &nbsp; Never miss a <b>story</b> from us, subscribe to our newsletter</span>
         <form action="{{site.mailchimp-list}}" method="post" name="mc-embedded-subscribe-form" class="wj-contact-form validate" target="_blank" novalidate>
             <div class="mc-field-group">
-            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required>
-            <input type="submit" value="Subscribe" name="subscribe" class="heart">
+            <input type="email" placeholder="Email" name="EMAIL" class="required email" id="mce-EMAIL" autocomplete="on" required style="padding: 8px; font-size: 14px;">
+	    <input type="submit" value="Subscribe" name="subscribe" class="heart" style="padding: 8px 16px; font-size: 14px;">
             </div>
         </form>
 	</div>
