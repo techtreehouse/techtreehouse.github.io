@@ -2,7 +2,7 @@
 layout: post
 title:  "How to Bypass Paywalls - ANDROID Edition"
 author: Tech Treehouse
-categories: [ Youtube, tutorial ]
+categories: [ Youtube, tutorial, Bypass Paywall ]
 image: assets/images/How-to-Bypass-Paywalls---ANDROID-Edition.jpg
 featured: true
 ---
