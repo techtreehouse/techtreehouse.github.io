@@ -5,16 +5,11 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
 <!-- Using an SVG with HTML-like control for the circular effect -->
-<link rel="icon" type="image/svg+xml" href="data:image/svg+xml;charset=utf-8,
-%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E
-  %3Cdefs%3E
-    %3CclipPath id='circleClip'%3E
-      %3Ccircle cx='16' cy='16' r='16' /%3E
-    %3C/clipPath%3E
-  %3C/defs%3E
-  %3Crect width='32' height='32' /%3E
-  %3Cimage href='{{ site.baseurl }}/assets/images/logo.png' x='0' y='0' height='32' width='32' clip-path='url(%23circleClip)' /%3E
-%3C/svg%3E">
+<link rel="icon" href="data:image/svg+xml,
+<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'>
+  <circle cx='16' cy='16' r='16' fill='white' fill-opacity="0"/>
+  <image href='{{ site.baseurl }}/assets/images/logo.png' x='0' y='0' height='32' width='32' clip-path='circle(16px at 16px 16px)'/>
+</svg>">
 
 <title>{{ page.title }} | {{site.name}}</title>
 
