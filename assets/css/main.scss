@@ -17,5 +17,6 @@
 .darkmode-layer, .darkmode-toggle { z-index: 500; }
 
 .darkmode--activated img {
-filter: invert(100%);
+//filter: invert(100%);
+isolation: isolate;
 }
