@@ -76,12 +76,9 @@
                 </li>
 
 		<li class="nav-item">
- 	 <!-- Custom Toggle Switch within the existing structure -->
- 		 <div class="custom-control custom-switch">
- 	   <!-- Hidden checkbox input for accessibility (not visible but necessary for toggling) -->
-     <input type="checkbox" class="custom-control-input" id="darkSwitch"/>
-    <label class="custom-control-label nav-link" for="darkSwitch" id="darkModeToggle" /*style="display: none !important;"*/>
-      <!-- Toggle switch replacing the checkbox appearance -->
+  <div class="custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" id="darkSwitch" style="display: none;" />
+    <label class="custom-control-label nav-link" for="darkSwitch" id="darkModeToggle">
       <div class="toggle-switch">
         <div class="toggle-thumb"></div>
       </div>
@@ -91,13 +88,6 @@
 </li>
 
 <style>
-  /* Hide the checkbox completely */
-  .custom-control-input {
-    position: absolute; /* Remove from layout */
-    left: -9999px; /* Move it off-screen */
-  }
-
-
   /* Toggle Switch Container */
   .toggle-switch {
     display: inline-block;
@@ -123,7 +113,7 @@
     transition: transform 0.3s ease;
   }
 
-  /* Dark Mode Active State - Blue Color */
+  /* Active State */
   .toggle-switch.active {
     background-color: #007bff; /* Blue color when active */
   }
@@ -139,19 +129,23 @@
   }
 </style>
 
-		<script>
-		  // JavaScript to toggle dark mode and update the switch appearance
-		  document.getElementById('darkModeToggle').addEventListener('click', function (event) {
-		    event.preventDefault();
- 		   const toggleSwitch = this.querySelector('.toggle-switch');
-		
- 		   // Toggle dark mode class (customize based on your dark mode implementation)
- 		   document.body.classList.toggle('dark-mode');
-		
- 		   // Toggle the switch active state
-		    toggleSwitch.classList.toggle('active');
-		  });
-		</script>
+<script>
+  // JavaScript to toggle dark mode and update the switch appearance
+  document.getElementById('darkModeToggle').addEventListener('click', function (event) {
+    event.preventDefault(); // Prevent default label behavior
+    const toggleSwitch = this.querySelector('.toggle-switch');
+
+    // Toggle dark mode class on the body
+    document.body.classList.toggle('dark-mode');
+
+    // Toggle the active class on the toggle switch
+    toggleSwitch.classList.toggle('active');
+
+    // Sync checkbox state
+    const checkbox = document.getElementById('darkSwitch');
+    checkbox.checked = !checkbox.checked;
+  });
+</script>
 
                 {% include search-lunr.html %}
 
