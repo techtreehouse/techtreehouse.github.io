@@ -15,3 +15,7 @@
 ;
 
 .darkmode-layer, .darkmode-toggle { z-index: 500; }
+
+body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
+  mix-blend-mode: difference;
+}
