@@ -91,40 +91,46 @@
 </li>
 
 		<style>
- 		 /* Toggle Switch Container */
-		  .toggle-switch {
-		    display: inline-block;
-		    width: 40px;
-		    height: 20px;
-		    background-color: #ccc;
- 		   border-radius: 20px;
- 		   position: relative;
- 		   transition: background-color 0.3s ease;
- 		   vertical-align: middle;
-		    margin-right: 8px; /* Space between toggle and text */
-		  }
+  /* Toggle Switch Container */
+  .toggle-switch {
+    display: inline-block;
+    width: 40px;
+    height: 20px;
+    background-color: #ccc;
+    border-radius: 20px;
+    position: relative;
+    transition: background-color 0.3s ease;
+    vertical-align: middle;
+    margin-right: 8px; /* Space between toggle and text */
+  }
 
-		  /* Toggle Thumb */
-		  .toggle-thumb {
-		    position: absolute;
-		    width: 16px;
-		    height: 16px;
-		    background-color: white;
-		    border-radius: 50%;
-		    top: 2px;
-		    left: 2px;
- 		   transition: transform 0.3s ease;
-		  }
+  /* Toggle Thumb */
+  .toggle-thumb {
+    position: absolute;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    top: 2px;
+    left: 2px;
+    transition: transform 0.3s ease;
+  }
 
- 		 /* Dark Mode Active State */
-		  .toggle-switch.active {
-		    background-color: #4caf50; /* Green color when active */
-		  }
+  /* Dark Mode Active State - Blue Color */
+  .toggle-switch.active {
+    background-color: #007bff; /* Blue color when active */
+  }
 
-		  .toggle-switch.active .toggle-thumb {
-		    transform: translateX(20px); /* Move thumb to the right */
-		  }
-		</style>
+  .toggle-switch.active .toggle-thumb {
+    transform: translateX(20px); /* Move thumb to the right */
+  }
+
+  /* Dark Mode Body Style */
+  .dark-mode {
+    background-color: #121212;
+    color: #f1f1f1;
+  }
+</style>
 
 		<script>
 		  // JavaScript to toggle dark mode and update the switch appearance
