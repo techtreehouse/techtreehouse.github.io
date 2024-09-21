@@ -75,6 +75,11 @@
                 <a target="_blank" class="nav-link" href="https://buymeacoffee.com/techtreehouse"><i class="fas fa-coffee"></i> Buy me a coffee!</a>
                 </li>
 
+		<div class="custom-control custom-switch">
+  		<input type="checkbox" class="custom-control-input" id="darkSwitch" />
+  		<label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+		</div>
+
                 {% include search-lunr.html %}
 
             </ul>
@@ -168,11 +173,6 @@
 
 <!-- Scripts
 ================================================== -->
-
-	<div class="custom-control custom-switch">
-  	<input type="checkbox" class="custom-control-input" id="darkSwitch" />
-  	<label class="custom-control-label" for="darkSwitch">Dark Mode</label>
-	</div>
 	<script src="dark-mode-switch.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
