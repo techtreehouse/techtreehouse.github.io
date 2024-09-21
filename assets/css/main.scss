@@ -14,7 +14,7 @@
     "starsnonscss"
 ;
 
-.darkmode-layer, .darkmode-toggle { z-index: 500; }
+.darkmode-layer, .darkmode-toggle { z-index: 1000; }
 
 html {
 filter: invert(100%) hue-rotate(180deg);
