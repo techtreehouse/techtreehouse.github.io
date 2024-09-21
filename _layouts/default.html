@@ -76,13 +76,19 @@
                 </li>
 
 		<li class="nav-item">
-  			<div class="custom-control custom-switch">
-    				<input type="checkbox" class="custom-control-input" id="darkSwitch" />
-    					<label class="custom-control-label nav-link" for="darkSwitch">
-      						<i class="fas fa-moon"></i> Dark Mode
-    					</label>
-  			</div>
-		</li>
+ 	 <!-- Custom Toggle Switch within the existing structure -->
+ 		 <div class="custom-control custom-switch">
+ 	   <!-- Hidden checkbox input for accessibility (not visible but necessary for toggling) -->
+    <input type="checkbox" class="custom-control-input" id="darkSwitch" />
+    <label class="custom-control-label nav-link" for="darkSwitch" id="darkModeToggle">
+      <!-- Toggle switch replacing the checkbox appearance -->
+      <div class="toggle-switch">
+        <div class="toggle-thumb"></div>
+      </div>
+      Dark Mode
+    </label>
+  </div>
+</li>
 
 		<style>
  		 /* Toggle Switch Container */
