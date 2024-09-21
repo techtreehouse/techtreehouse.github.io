@@ -169,14 +169,11 @@
 <!-- Scripts
 ================================================== -->
 
-	<script src="https://cdn.jsdelivr.net/npm/darkmode-js@1.5.7/lib/darkmode-js.min.js"></script>
-	
-	<script>
-	  function addDarkmodeWidget() {
-	    new Darkmode().showWidget();
-	  }
-	  window.addEventListener('load', addDarkmodeWidget);
-	</script>
+	<div class="custom-control custom-switch">
+  	<input type="checkbox" class="custom-control-input" id="darkSwitch" />
+  	<label class="custom-control-label" for="darkSwitch">Dark Mode</label>
+	</div>
+	<script src="dark-mode-switch.min.js"></script>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.6/umd/popper.min.js"
         integrity="sha384-wHAiFfRlMFy6i5SRaxvfOCifBUQy1xHdJ/yoi7FRNXMRBu5WHdZYu1hA6ZOblgut"
