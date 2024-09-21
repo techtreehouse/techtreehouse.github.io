@@ -1,6 +1,6 @@
 ---
 layout: page
-title: About Tech Treehouse
+title: About
 permalink: /about
 comments: false
 ---
