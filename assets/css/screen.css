@@ -902,6 +902,9 @@ iframe {
 
 .darkmode-layer, .darkmode-toggle { z-index: 500; }
 
+html {
+filter: invert(100%) hue-rotate(180deg);
+}
 .darkmode--activated img {
-isolation: isolate;
+filter: invert(100%) hue-rotate(180deg);
 }
