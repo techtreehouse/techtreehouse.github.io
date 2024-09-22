@@ -78,7 +78,9 @@
 <li class="nav-item">
   <div class="custom-control custom-switch" style="display: flex; align-items: center;">
     <input type="checkbox" class="custom-control-input" id="darkSwitch" />
-    <label class="custom-control-label" for="darkSwitch" style="margin-left: 10px;">Dark Mode</label>
+    <label class="custom-control-label nav-link" for="darkSwitch">
+      Dark Mode
+    </label>
   </div>
 </li>
 
@@ -100,7 +102,7 @@
   .custom-control-label::before {
     content: '';
     position: absolute;
-    left: -35px; /* Position of the toggle */
+    left: -35px; /* Move the toggle to the left */
     top: 50%;
     transform: translateY(-50%);
     width: 40px; /* Width of the switch */
@@ -108,6 +110,7 @@
     background-color: #ccc; /* Background color */
     border-radius: 34px; /* Rounded edges */
     transition: background-color 0.3s; /* Smooth transition */
+    cursor: pointer;
   }
 
   /* Create the toggle thumb */
