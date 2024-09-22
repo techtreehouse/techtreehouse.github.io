@@ -85,47 +85,47 @@
 </li>
 
 <style>
-  /* Hide the default checkbox and make it look like a toggle */
+  /* Transform the checkbox into a toggle switch */
   .toggle-checkbox {
-    -webkit-appearance: none;
-    appearance: none;
-    width: 40px;
-    height: 20px;
-    background-color: #ccc;
-    border-radius: 20px;
-    position: relative;
-    outline: none;
-    cursor: pointer;
-    transition: background-color 0.3s ease;
-    display: inline-block;
-    vertical-align: middle;
+    appearance: none; /* Remove default checkbox styling */
+    -webkit-appearance: none; /* For Safari */
+    width: 40px; /* Width of the toggle */
+    height: 20px; /* Height of the toggle */
+    background-color: #ccc; /* Default background color */
+    border-radius: 20px; /* Rounded edges */
+    position: relative; /* Position relative for the pseudo-element */
+    outline: none; /* Remove outline */
+    cursor: pointer; /* Pointer cursor for interaction */
+    transition: background-color 0.3s ease; /* Smooth transition */
+    display: inline-block; /* Display inline */
+    vertical-align: middle; /* Align with text */
   }
 
-  /* Toggle thumb using the checkbox pseudo-element */
+  /* Style the toggle thumb */
   .toggle-checkbox::before {
-    content: '';
-    position: absolute;
-    top: 2px;
-    left: 2px;
-    width: 16px;
-    height: 16px;
-    background-color: white;
-    border-radius: 50%;
-    transition: transform 0.3s ease;
+    content: ''; /* Empty content for the thumb */
+    position: absolute; /* Absolute positioning inside the toggle */
+    top: 2px; /* Position from the top */
+    left: 2px; /* Position from the left */
+    width: 16px; /* Width of the thumb */
+    height: 16px; /* Height of the thumb */
+    background-color: white; /* Thumb color */
+    border-radius: 50%; /* Round thumb */
+    transition: transform 0.3s ease; /* Smooth thumb movement */
   }
 
-  /* Checkbox when checked */
+  /* Change appearance when the checkbox is checked */
   .toggle-checkbox:checked {
-    background-color: #007bff; /* Blue when active */
+    background-color: #007bff; /* Blue background when checked */
   }
 
   .toggle-checkbox:checked::before {
-    transform: translateX(20px); /* Slide the thumb to the right */
+    transform: translateX(20px); /* Slide thumb to the right when checked */
   }
 
-  /* Align the label correctly with the toggle */
+  /* Label styling */
   .custom-control-label {
-    margin-left: 8px;
+    margin-left: 10px; /* Space between the toggle and the label */
     display: inline-block;
     vertical-align: middle;
   }
