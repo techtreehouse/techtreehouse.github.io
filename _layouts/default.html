@@ -90,18 +90,17 @@
   display: none; /* Hide the checkbox */
 }
 
-/* Custom toggle styling */
+/* Custom switch styling */
 .custom-control-label {
   position: relative; /* Position for the switch */
-  padding-left: 35px; /* Padding for text */
+  padding-right: 50px; /* Padding for text */
   cursor: pointer; /* Change cursor to pointer */
-  user-select: none; /* Prevent text selection */
 }
 
 /* Create the toggle */
 .toggle {
   position: absolute;
-  left: 0; /* Position of toggle */
+  right: 0; /* Position of toggle */
   top: 50%;
   transform: translateY(-50%);
   width: 40px; /* Width of the toggle */
@@ -112,11 +111,11 @@
 }
 
 /* Change styles when the checkbox is checked */
-.custom-control-input:checked + .custom-control-label .toggle {
+.custom-control-input:checked + .custom-control-label + .toggle {
   background-color: #007bff; /* Color when checked */
 }
 
-/* Adding the thumb */
+/* Create the thumb */
 .toggle::after {
   content: '';
   position: absolute;
@@ -131,7 +130,7 @@
 }
 
 /* Move the thumb to the right when checked */
-.custom-control-input:checked + .custom-control-label .toggle::after {
+.custom-control-input:checked + .custom-control-label + .toggle::after {
   transform: translate(16px, -50%); /* Move the thumb to the right */
 }
 </style>
