@@ -38,17 +38,20 @@
 }
 
 [data-theme="dark"] .card-text {
-  background-color: #EEEEEE !important;
+  background-color: #000 !important;
+  color: #eee;
 }
 
 [data-theme="dark"] .card-title {
-  background-color: #EEEEEE !important;
+  background-color: #000 !important;
+  color: #eee;
 }
 
 [data-theme="dark"] .card-footer {
-  background-color: #EEEEEE !important;
+  background-color: #000 !important;
 }
 
 [data-theme="dark"] .footer {
-  background-color: #EEEEEE !important;
+  background-color: #000 !important;
+  color: #eee;
 }
