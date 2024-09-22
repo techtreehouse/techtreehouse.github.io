@@ -96,13 +96,16 @@
     padding-left: 60px; /* Padding for text */
     cursor: pointer; /* Change cursor to pointer */
     user-select: none; /* Prevent text selection */
+    margin-left: 10px; /* Space to the left */
+    display: flex; /* Make label flex to center text and toggle */
+    align-items: center; /* Center items vertically */
   }
 
   /* Create the toggle switch */
   .custom-control-label::before {
     content: '';
     position: absolute;
-    left: -35px; /* Move the toggle to the left */
+    left: 0; /* Align to the left */
     top: 50%;
     transform: translateY(-50%);
     width: 40px; /* Width of the switch */
@@ -110,18 +113,17 @@
     background-color: #ccc; /* Background color */
     border-radius: 34px; /* Rounded edges */
     transition: background-color 0.3s; /* Smooth transition */
-    cursor: pointer;
   }
 
   /* Create the toggle thumb */
   .custom-control-label::after {
     content: '';
     position: absolute;
-    left: -31px; /* Position from left */
+    left: 2px; /* Initial position from left */
     top: 50%;
     transform: translateY(-50%);
-    width: 16px; /* Width of the thumb */
-    height: 16px; /* Height of the thumb */
+    width: 20px; /* Width of the thumb */
+    height: 20px; /* Height of the thumb */
     background-color: white; /* Thumb color */
     border-radius: 50%; /* Make the thumb round */
     transition: transform 0.3s; /* Smooth thumb transition */
@@ -133,7 +135,7 @@
   }
 
   .custom-control-input:checked + .custom-control-label::after {
-    transform: translate(16px, -50%); /* Move the thumb to the right */
+    transform: translate(18px, -50%); /* Move the thumb to the right */
   }
 </style>
 
