@@ -75,10 +75,10 @@
                 <a target="_blank" class="nav-link" href="https://buymeacoffee.com/techtreehouse"><i class="fas fa-coffee"></i> Buy me a coffee!</a>
                 </li>
 
-<li class="nav-item" style="margin-left: 20px;"> <!-- Add margin to the nav item -->
-  <div class="custom-control custom-switch" style="display: flex; align-items: center;">
+<li class="nav-item" style="margin-left: 15px;"> <!-- Reduced margin for integration -->
+  <div class="custom-control custom-switch">
     <input type="checkbox" class="custom-control-input" id="darkSwitch" />
-    <label class="custom-control-label" for="darkSwitch">
+    <label class="custom-control-label" for="darkSwitch" style="padding-left: 50px;"> <!-- Space for toggle -->
       Dark Mode
     </label>
   </div>
@@ -95,9 +95,8 @@
     position: relative; /* Position for the switch */
     cursor: pointer; /* Change cursor to pointer */
     user-select: none; /* Prevent text selection */
-    display: flex; /* Make label flex to center text and toggle */
+    display: inline-flex; /* Ensure it fits well in the navbar */
     align-items: center; /* Center items vertically */
-    padding-left: 60px; /* Space for toggle */
   }
 
   /* Create the toggle switch */
