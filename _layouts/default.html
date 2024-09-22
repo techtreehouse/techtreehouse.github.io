@@ -75,10 +75,10 @@
                 <a target="_blank" class="nav-link" href="https://buymeacoffee.com/techtreehouse"><i class="fas fa-coffee"></i> Buy me a coffee!</a>
                 </li>
 
-<li class="nav-item">
+<li class="nav-item" style="margin-left: 20px;"> <!-- Add margin to the nav item -->
   <div class="custom-control custom-switch" style="display: flex; align-items: center;">
     <input type="checkbox" class="custom-control-input" id="darkSwitch" />
-    <label class="custom-control-label nav-link" for="darkSwitch">
+    <label class="custom-control-label" for="darkSwitch">
       Dark Mode
     </label>
   </div>
@@ -93,12 +93,11 @@
   /* Custom switch styling */
   .custom-control-label {
     position: relative; /* Position for the switch */
-    padding-left: 60px; /* Padding for text */
     cursor: pointer; /* Change cursor to pointer */
     user-select: none; /* Prevent text selection */
-    margin-left: 10px; /* Space to the left */
     display: flex; /* Make label flex to center text and toggle */
     align-items: center; /* Center items vertically */
+    padding-left: 60px; /* Space for toggle */
   }
 
   /* Create the toggle switch */
@@ -108,7 +107,7 @@
     left: 0; /* Align to the left */
     top: 50%;
     transform: translateY(-50%);
-    width: -35px; /* Width of the switch */
+    width: 40px; /* Width of the switch */
     height: 24px; /* Height of the switch */
     background-color: #ccc; /* Background color */
     border-radius: 34px; /* Rounded edges */
@@ -119,7 +118,7 @@
   .custom-control-label::after {
     content: '';
     position: absolute;
-    left: -31px; /* Initial position from left */
+    left: 2px; /* Initial position from left */
     top: 50%;
     transform: translateY(-50%);
     width: 20px; /* Width of the thumb */
