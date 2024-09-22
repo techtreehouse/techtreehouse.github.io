@@ -14,144 +14,58 @@
     "starsnonscss"
 ;
 
-/* Dark Theme for Tech Treehouse Website */
-
-/* General Styling */
+/* Global dark theme styles */
 [data-theme="dark"] {
-  background-color: #121212 !important;
-  color: #e0e0e0 !important;
+  background-color: #111 !important;
+  color: #eee !important;
 }
 
-/* Navbar Styling */
-[data-theme="dark"] .navbar {
-  background-color: #1f1f1f !important;
-  border-bottom: 1px solid #333 !important;
+/* Background and text adjustments for various elements */
+[data-theme="dark"] .bg-black {
+  background-color: #222 !important;
 }
 
-[data-theme="dark"] .navbar .nav-link {
-  color: #e0e0e0 !important;
+[data-theme="dark"] .bg-dark {
+  background-color: #333 !important;
 }
 
-[data-theme="dark"] .navbar-brand img {
-  filter: brightness(0.8);
+[data-theme="dark"] .bg-light {
+  background-color: #222 !important;
 }
 
-/* Main Content Area */
 [data-theme="dark"] .site-content {
-  background-color: #181818 !important;
-  color: #e0e0e0 !important;
+  background-color: #111 !important;
 }
 
-/* Headings */
-[data-theme="dark"] .mainheading h1 {
-  color: #ffffff !important;
-}
-
-[data-theme="dark"] .lead {
-  color: #b0b0b0 !important;
-}
-
-/* Card Styling */
+/* Card component styles */
 [data-theme="dark"] .card {
-  background-color: #232323 !important;
-  border: 1px solid #333 !important;
+  background-color: #222 !important;
+  color: #eee !important;
 }
 
 [data-theme="dark"] .card-body {
-  color: #e0e0e0 !important;
+  background-color: #222 !important;
 }
 
-[data-theme="dark"] .card-title {
-  color: #ffffff !important;
+[data-theme="dark"] .card-footer {
+  background-color: #222 !important;
+  color: #ddd !important;
+}
+
+/* Text and footer adjustments */
+[data-theme="dark"] .text-dark {
+  color: #ccc !important;
 }
 
 [data-theme="dark"] .card-text {
-  color: #d0d0d0 !important;
+  color: #ddd !important;
 }
 
-/* Buttons */
-[data-theme="dark"] .btn {
-  background-color: #3b3b3b !important;
-  color: #ffffff !important;
-  border-color: #555 !important;
+[data-theme="dark"] .card-title {
+  color: #eee !important;
 }
 
-[data-theme="dark"] .btn:hover {
-  background-color: #555 !important;
-}
-
-/* Links */
-[data-theme="dark"] a {
-  color: #90caf9 !important; /* Soft blue for links */
-}
-
-[data-theme="dark"] a:hover {
-  color: #82b1ff !important;
-}
-
-/* Input Fields */
-[data-theme="dark"] input,
-[data-theme="dark"] textarea {
-  background-color: #2b2b2b !important;
-  color: #ffffff !important;
-  border: 1px solid #444 !important;
-}
-
-/* Footer */
 [data-theme="dark"] .footer {
-  background-color: #1c1c1c !important;
-  color: #b0b0b0 !important;
-}
-
-[data-theme="dark"] .footer a {
-  color: #90caf9 !important;
-}
-
-/* Alerts and Message Boxes */
-[data-theme="dark"] .alertbar {
-  background-color: #2a2a2a !important;
-  color: #d0d0d0 !important;
-}
-
-/* Jumbotron and Category Sections */
-[data-theme="dark"] .jumbotron {
-  background-color: #202020 !important;
-  color: #e0e0e0 !important;
-}
-
-[data-theme="dark"] .fortags a {
-  color: #90caf9 !important;
-}
-
-/* Icons and Font Adjustments */
-[data-theme="dark"] .fa {
-  color: #ffffff !important;
-}
-
-/* Miscellaneous Elements */
-[data-theme="dark"] .main-content a {
-  color: #bbdefb !important;
-}
-
-[data-theme="dark"] .main-content blockquote {
-  background-color: #1e1e1e !important;
-  border-left: 4px solid #007bff !important;
-  color: #d0d0d0 !important;
-}
-
-/* Table Styling */
-[data-theme="dark"] table {
-  background-color: #212121 !important;
-  color: #e0e0e0 !important;
-  border: 1px solid #333 !important;
-}
-
-[data-theme="dark"] th {
-  background-color: #333 !important;
-  color: #e0e0e0 !important;
-}
-
-[data-theme="dark"] td {
-  background-color: #2a2a2a !important;
-  color: #e0e0e0 !important;
+  background-color: #111 !important;
+  color: #ddd !important;
 }
