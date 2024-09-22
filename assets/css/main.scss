@@ -17,26 +17,23 @@
 /* Global dark theme styles */
 /* Dark Theme for Tech Treehouse Website */
 
-/* Dark Mode CSS */
-
-/* Dark Mode CSS */
-
-/* General Background and Text Colors */
+/* General Dark Theme */
 [data-theme="dark"] {
   background-color: #111 !important;
   color: #eee !important;
 }
 
+/* Background Adjustments */
 [data-theme="dark"] .bg-black {
-  background-color: #fff !important;
+  background-color: #222 !important;
 }
 
 [data-theme="dark"] .bg-dark {
-  background-color: #eee !important;
+  background-color: #333 !important;
 }
 
 [data-theme="dark"] .bg-light {
-  background-color: #222 !important;
+  background-color: #1a1a1a !important;
 }
 
 [data-theme="dark"] .site-content {
@@ -45,24 +42,19 @@
 
 /* Card Styles */
 [data-theme="dark"] .card {
-  background-color: #000 !important;
+  background-color: #1a1a1a !important;
+  border-color: #333 !important;
 }
 
 [data-theme="dark"] .card-body {
-  background-color: #000 !important;
-}
-
-[data-theme="dark"] .text-dark {
-  color: #EEEEEE !important;
+  background-color: #1a1a1a !important;
 }
 
 [data-theme="dark"] .card-text {
-  background-color: #000 !important;
-  color: #eee !important;
+  color: #ddd !important;
 }
 
 [data-theme="dark"] .card-title {
-  background-color: #000 !important;
   color: #eee !important;
 }
 
@@ -80,79 +72,80 @@
   color: #ccc !important; /* Ensures the icon is visible */
 }
 
-/* Footer Styles */
+
+/* Text Adjustments */
+[data-theme="dark"] .text-dark {
+  color: #eee !important;
+}
+
+/* Footer */
 [data-theme="dark"] .footer {
-  background-color: #000 !important;
-  color: #eee !important;
+  background-color: #111 !important;
+  color: #ccc !important;
 }
 
-[data-theme="dark"] .footer a {
-  color: #bbb !important;
-}
-
-[data-theme="dark"] .footer a:hover {
-  color: #fff !important;
-}
-
-/* Navbar Styles */
+/* Navbar */
 [data-theme="dark"] .navbar {
-  background-color: #222 !important;
+  background-color: #1a1a1a !important;
+  border-bottom: 1px solid #333 !important;
 }
 
-[data-theme="dark"] .navbar .nav-link {
+[data-theme="dark"] .navbar-nav .nav-link {
+  color: #ccc !important;
+}
+
+[data-theme="dark"] .navbar-brand img {
+  filter: brightness(0.8) !important;
+}
+
+/* Jumbotron */
+[data-theme="dark"] .jumbotron {
+  background-color: #1c1c1c !important;
   color: #ddd !important;
 }
 
-[data-theme="dark"] .navbar .nav-link:hover {
-  color: #fff !important;
-}
-
-[data-theme="dark"] .navbar-brand {
-  color: #ddd !important;
-}
-
-[data-theme="dark"] .navbar-brand:hover {
-  color: #fff !important;
-}
-
-/* Search Bar and Input Fields */
-[data-theme="dark"] input,
-[data-theme="dark"] textarea {
-  background-color: #333 !important;
-  color: #eee !important;
-  border: 1px solid #444 !important;
-}
-
-[data-theme="dark"] input::placeholder,
-[data-theme="dark"] textarea::placeholder {
-  color: #aaa !important;
-}
-
-[data-theme="dark"] input:focus,
-[data-theme="dark"] textarea:focus {
-  border-color: #666 !important;
-}
-
-/* Button Styles */
+/* Button Adjustments */
 [data-theme="dark"] .btn {
   background-color: #444 !important;
   color: #eee !important;
   border: 1px solid #555 !important;
 }
 
-[data-theme="dark"] .btn:hover {
-  background-color: #555 !important;
-  color: #fff !important;
+/* Alert Bar */
+[data-theme="dark"] .alertbar {
+  background-color: #292929 !important;
+  color: #eee !important;
 }
 
-/* Alert and Jumbotron Styles */
-[data-theme="dark"] .alert {
+/* Form Elements */
+[data-theme="dark"] input,
+[data-theme="dark"] textarea,
+[data-theme="dark"] select {
   background-color: #222 !important;
-  color: #ddd !important;
-  border-color: #444 !important;
+  color: #eee !important;
+  border: 1px solid #444 !important;
 }
 
-[data-theme="dark"] .jumbotron {
+/* Category Links */
+[data-theme="dark"] .fortags a {
+  color: #bbb !important;
+  background-color: #2e2e2e !important;
+}
+
+/* Search */
+[data-theme="dark"] .search-bar {
+  background-color: #1a1a1a !important;
+  color: #eee !important;
+  border: 1px solid #333 !important;
+}
+
+[data-theme="dark"] .search-bar input {
   background-color: #111 !important;
+  color: #eee !important;
+}
+
+/* Subscribe Button */
+[data-theme="dark"] .heart {
+  background-color: #444 !important;
   color: #eee !important;
 }
