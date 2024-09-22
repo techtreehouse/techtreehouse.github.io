@@ -66,15 +66,18 @@
   color: #eee !important;
 }
 
+/* Dark mode styles for .card-footer */
 [data-theme="dark"] .card-footer {
-  background-color: #111 !important;
-  color: #ddd !important;
-  border-top: 1px solid #444 !important;
+  background-color: #111 !important; /* Slightly lighter than pure black */
+  color: #ddd !important; /* Light gray color for better contrast */
 }
 
-[data-theme="dark"] .card-footer .date,
-[data-theme="dark"] .card-footer .bookmark {
-  color: #bbb !important;
+[data-theme="dark"] .card-footer .date {
+  color: #bbb !important; /* Adjusted to a lighter gray to stand out */
+}
+
+[data-theme="dark"] .card-footer .bookmark-icon {
+  color: #ccc !important; /* Ensures the icon is visible */
 }
 
 /* Footer Styles */
