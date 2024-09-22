@@ -10,7 +10,7 @@
 {% seo %}
 
 <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-    
+
 <link href="{{ site.baseurl }}/assets/css/screen.css" rel="stylesheet">
 
 <link href="{{ site.baseurl }}/assets/css/main.css" rel="stylesheet">
@@ -78,7 +78,7 @@
 <li class="nav-item">
   <div class="custom-control custom-switch" style="display: flex; align-items: center;">
     <input type="checkbox" class="custom-control-input" id="darkSwitch" />
-    <label class="custom-control-label" for="darkSwitch" style="margin-left: 10px;"> <!-- Space for text -->
+    <label class="custom-control-label nav-link" for="darkSwitch">
       Dark Mode
     </label>
   </div>
@@ -93,17 +93,16 @@
   /* Custom switch styling */
   .custom-control-label {
     position: relative; /* Position for the switch */
+    padding-left: 60px; /* Padding for text */
     cursor: pointer; /* Change cursor to pointer */
     user-select: none; /* Prevent text selection */
-    display: flex; /* Keep label flexible */
-    align-items: center; /* Center items vertically */
   }
 
   /* Create the toggle switch */
   .custom-control-label::before {
     content: '';
     position: absolute;
-    left: 0; /* Align to the left */
+    left: -35px; /* Move the toggle to the left */
     top: 50%;
     transform: translateY(-50%);
     width: 40px; /* Width of the switch */
@@ -111,17 +110,18 @@
     background-color: #ccc; /* Background color */
     border-radius: 34px; /* Rounded edges */
     transition: background-color 0.3s; /* Smooth transition */
+    cursor: pointer;
   }
 
   /* Create the toggle thumb */
   .custom-control-label::after {
     content: '';
     position: absolute;
-    left: 2px; /* Initial position from left */
+    left: -31px; /* Position from left */
     top: 50%;
     transform: translateY(-50%);
-    width: 20px; /* Width of the thumb */
-    height: 20px; /* Height of the thumb */
+    width: 16px; /* Width of the thumb */
+    height: 16px; /* Height of the thumb */
     background-color: white; /* Thumb color */
     border-radius: 50%; /* Make the thumb round */
     transition: transform 0.3s; /* Smooth thumb transition */
@@ -133,10 +133,10 @@
   }
 
   .custom-control-input:checked + .custom-control-label::after {
-    transform: translate(18px, -50%); /* Move the thumb to the right */
+    transform: translate(16px, -50%); /* Move the thumb to the right */
   }
 </style>
-		    
+
 <script>
   // JavaScript to toggle dark mode and update the switch appearance
   document.getElementById('darkModeToggle').addEventListener('click', function (event) {
@@ -202,7 +202,7 @@
 	</div>
 </div>
 {% endif %}
-    
+
 </div>
 
 <!-- Categories Jumbotron
@@ -270,7 +270,7 @@
     {% endif %}
 
 		<script src="dark-mode-switch.min.js"></script>
-	
+
 </body>
 
 </html>
