@@ -15,6 +15,9 @@
 ;
 
 /* Global dark theme styles */
+/* Dark Theme for Tech Treehouse Website */
+
+/* Global dark theme styles */
 [data-theme="dark"] {
   background-color: #111 !important;
   color: #eee !important;
@@ -37,6 +40,41 @@
   background-color: #111 !important;
 }
 
+/* Navbar and navigation adjustments */
+[data-theme="dark"] .navbar {
+  background-color: #222 !important;
+  border-bottom: 1px solid #444 !important;
+}
+
+[data-theme="dark"] .navbar-brand, 
+[data-theme="dark"] .nav-link {
+  color: #ccc !important;
+}
+
+[data-theme="dark"] .navbar-toggler-icon {
+  filter: brightness(0.8);
+}
+
+/* Button and form input adjustments */
+[data-theme="dark"] .btn {
+  background-color: #333 !important;
+  color: #ddd !important;
+  border: 1px solid #555 !important;
+}
+
+[data-theme="dark"] .btn:hover {
+  background-color: #444 !important;
+  border-color: #666 !important;
+}
+
+[data-theme="dark"] input, 
+[data-theme="dark"] textarea, 
+[data-theme="dark"] select {
+  background-color: #222 !important;
+  color: #eee !important;
+  border: 1px solid #444 !important;
+}
+
 /* Card component styles */
 [data-theme="dark"] .card {
   background-color: #222 !important;
@@ -50,6 +88,7 @@
 [data-theme="dark"] .card-footer {
   background-color: #222 !important;
   color: #ddd !important;
+  border-top: 1px solid #444 !important;
 }
 
 /* Text and footer adjustments */
@@ -68,4 +107,62 @@
 [data-theme="dark"] .footer {
   background-color: #111 !important;
   color: #ddd !important;
+}
+
+/* Alert and jumbotron adjustments */
+[data-theme="dark"] .alertbar {
+  background-color: #222 !important;
+  color: #ddd !important;
+}
+
+[data-theme="dark"] .jumbotron {
+  background-color: #222 !important;
+  color: #ddd !important;
+  border: 1px solid #444 !important;
+}
+
+/* Table and list adjustments */
+[data-theme="dark"] table {
+  background-color: #222 !important;
+  color: #eee !important;
+  border-color: #444 !important;
+}
+
+[data-theme="dark"] th, 
+[data-theme="dark"] td {
+  border-color: #444 !important;
+}
+
+[data-theme="dark"] .list-group-item {
+  background-color: #222 !important;
+  color: #eee !important;
+  border: 1px solid #444 !important;
+}
+
+/* Header and title adjustments */
+[data-theme="dark"] .mainheading {
+  background-color: #111 !important;
+  color: #eee !important;
+}
+
+[data-theme="dark"] .sitetitle {
+  color: #eee !important;
+}
+
+/* Toggle switch adjustments */
+[data-theme="dark"] .custom-control-label::before {
+  background-color: #333 !important;
+}
+
+[data-theme="dark"] .custom-control-label::after {
+  background-color: #eee !important;
+}
+
+/* Miscellaneous adjustments */
+[data-theme="dark"] a {
+  color: #bbb !important;
+}
+
+[data-theme="dark"] hr {
+  border-color: #444 !important;
 }
