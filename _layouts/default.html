@@ -93,7 +93,7 @@
   /* Custom switch styling */
   .custom-control-label {
     position: relative; /* Position for the switch */
-    padding-left: 70px; /* Increased padding for the switch */
+    padding-left: 60px; /* Padding for text */
     cursor: pointer; /* Change cursor to pointer */
     user-select: none; /* Prevent text selection */
   }
@@ -102,7 +102,7 @@
   .custom-control-label::before {
     content: '';
     position: absolute;
-    left: 0;
+    left: -4px; /* Move the toggle to the left */
     top: 50%;
     transform: translateY(-50%);
     width: 40px; /* Width of the switch */
