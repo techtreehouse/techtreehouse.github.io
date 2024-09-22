@@ -76,10 +76,10 @@
                 </li>
 
 <li class="nav-item">
-  <div class="custom-control custom-switch" style="display: flex; align-items: center; margin-left: 15px;">
+  <div class="custom-control custom-switch" style="display: flex; align-items: center;">
     <input type="checkbox" class="custom-control-input" id="darkSwitch" />
-    <label class="custom-control-label" for="darkSwitch" style="margin-left: 10px; cursor: pointer;">
-      Dark Mode
+    <label class="custom-control-label" for="darkSwitch" style="cursor: pointer; display: flex; align-items: center;">
+      <span class="toggle"></span> Dark Mode
     </label>
   </div>
 </li>
@@ -90,28 +90,51 @@
   display: none; /* Hide the checkbox */
 }
 
-/* Custom switch styling */
+/* Custom toggle styling */
 .custom-control-label {
   position: relative; /* Position for the switch */
-  padding-left: 20px; /* Padding for text */
+  padding-left: 35px; /* Padding for text */
   cursor: pointer; /* Change cursor to pointer */
   user-select: none; /* Prevent text selection */
-  background-color: #ccc; /* Default background */
+}
+
+/* Create the toggle */
+.toggle {
+  position: absolute;
+  left: 0; /* Position of toggle */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 40px; /* Width of the toggle */
+  height: 24px; /* Height of the toggle */
+  background-color: #ccc; /* Background color */
   border-radius: 50px; /* Rounded edges */
-  height: 24px; /* Height of the switch */
-  width: 50px; /* Width of the switch */
-  display: flex; /* Flex display */
-  align-items: center; /* Center the text */
-  justify-content: center; /* Center the text */
   transition: background-color 0.3s; /* Smooth transition */
 }
 
 /* Change styles when the checkbox is checked */
-.custom-control-input:checked + .custom-control-label {
+.custom-control-input:checked + .custom-control-label .toggle {
   background-color: #007bff; /* Color when checked */
 }
-</style>
 
+/* Optional: Adding the thumb */
+.toggle::after {
+  content: '';
+  position: absolute;
+  left: 4px; /* Position from left */
+  top: 50%;
+  transform: translateY(-50%);
+  width: 16px; /* Width of the thumb */
+  height: 16px; /* Height of the thumb */
+  background-color: white; /* Thumb color */
+  border-radius: 50%; /* Make the thumb round */
+  transition: transform 0.3s; /* Smooth thumb transition */
+}
+
+/* Move the thumb to the right when checked */
+.custom-control-input:checked + .custom-control-label .toggle::after {
+  transform: translate(16px, -50%); /* Move the thumb to the right */
+}
+</style>
 <script>
   // JavaScript to toggle dark mode and update the switch appearance
   document.getElementById('darkModeToggle').addEventListener('click', function (event) {
