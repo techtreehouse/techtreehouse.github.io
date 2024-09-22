@@ -85,53 +85,53 @@
 </li>
 
 <style>
-  /* Completely hide the native checkbox style */
+  /* Fully hide the default checkbox appearance */
   .toggle-checkbox {
-    appearance: none; /* Remove all default styling */
-    -webkit-appearance: none; /* Remove appearance for Safari */
-    -moz-appearance: none; /* Remove appearance for Firefox */
-    display: inline-block; /* Display inline */
-    width: 40px; /* Toggle width */
-    height: 20px; /* Toggle height */
-    background-color: #ccc; /* Default toggle background */
-    border-radius: 20px; /* Rounded edges */
-    position: relative; /* Relative positioning for the thumb */
-    cursor: pointer; /* Pointer cursor */
-    outline: none; /* No outline */
-    transition: background-color 0.3s ease-in-out; /* Smooth transition */
+    appearance: none !important; /* Resets any default styles across browsers */
+    -webkit-appearance: none !important; /* Resets appearance for Safari */
+    -moz-appearance: none !important; /* Resets appearance for Firefox */
+    background-color: #ccc !important; /* Default background color of the toggle */
+    border-radius: 20px !important; /* Rounds the toggle switch */
+    width: 40px !important; /* Width of the toggle switch */
+    height: 20px !important; /* Height of the toggle switch */
+    position: relative !important; /* Allows positioning of the thumb */
+    cursor: pointer !important; /* Changes cursor to pointer on hover */
+    outline: none !important; /* Removes outline when focused */
+    transition: background-color 0.3s ease-in-out !important; /* Smooth transition for color change */
+    border: none !important; /* Removes any borders */
+    display: inline-block !important; /* Ensures proper display */
   }
 
-  /* Create the toggle thumb */
+  /* Creating the thumb inside the toggle */
   .toggle-checkbox::before {
-    content: ''; /* Empty content for the thumb */
-    position: absolute; /* Positioned inside the toggle */
-    top: 2px; /* Thumb's top positioning */
-    left: 2px; /* Thumb's left positioning */
-    width: 16px; /* Thumb width */
-    height: 16px; /* Thumb height */
-    background-color: #fff; /* Thumb color */
-    border-radius: 50%; /* Make the thumb round */
-    transition: transform 0.3s ease-in-out; /* Smooth thumb movement */
+    content: '' !important; /* Pseudo-element for the thumb */
+    position: absolute !important; /* Positioned within the toggle */
+    top: 2px !important; /* Vertical positioning */
+    left: 2px !important; /* Horizontal positioning */
+    width: 16px !important; /* Width of the thumb */
+    height: 16px !important; /* Height of the thumb */
+    background-color: white !important; /* Thumb color */
+    border-radius: 50% !important; /* Make the thumb round */
+    transition: transform 0.3s ease-in-out !important; /* Smooth transition when toggled */
   }
 
-  /* Toggle appearance when checked */
+  /* Style when the checkbox is checked */
   .toggle-checkbox:checked {
-    background-color: #007bff; /* Blue background when active */
+    background-color: #007bff !important; /* Change toggle color when checked */
   }
 
-  /* Slide the thumb to the right when checked */
+  /* Move thumb to the right when checked */
   .toggle-checkbox:checked::before {
-    transform: translateX(20px); /* Move thumb to the right */
+    transform: translateX(20px) !important; /* Slide the thumb to the right */
   }
 
-  /* Style the label to align with the toggle */
+  /* Label styling */
   .custom-control-label {
-    margin-left: 8px; /* Space between toggle and text */
-    display: inline-block; /* Display inline */
-    vertical-align: middle; /* Align text with the toggle */
+    margin-left: 8px !important; /* Space between the toggle and the text */
+    display: inline-block !important; /* Keep the label inline */
+    vertical-align: middle !important; /* Align the label with the toggle */
   }
 </style>
-
 
 <script>
   // JavaScript to toggle dark mode and update the switch appearance
