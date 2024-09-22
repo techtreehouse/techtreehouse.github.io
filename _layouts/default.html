@@ -85,51 +85,49 @@
 </li>
 
 <style>
-  /* Fully hide the default checkbox appearance */
+  /* Hide the native checkbox appearance and style it as a toggle */
   .toggle-checkbox {
-    appearance: none !important; /* Resets any default styles across browsers */
-    -webkit-appearance: none !important; /* Resets appearance for Safari */
-    -moz-appearance: none !important; /* Resets appearance for Firefox */
+    -webkit-appearance: none !important; /* Removes default checkbox styling in WebKit browsers */
+    -moz-appearance: none !important; /* Removes default checkbox styling in Mozilla browsers */
+    appearance: none !important; /* Removes default checkbox styling across all browsers */
+    width: 42px !important; /* Set the width of the toggle */
+    height: 24px !important; /* Set the height of the toggle */
     background-color: #ccc !important; /* Default background color of the toggle */
-    border-radius: 20px !important; /* Rounds the toggle switch */
-    width: 40px !important; /* Width of the toggle switch */
-    height: 20px !important; /* Height of the toggle switch */
-    position: relative !important; /* Allows positioning of the thumb */
-    cursor: pointer !important; /* Changes cursor to pointer on hover */
-    outline: none !important; /* Removes outline when focused */
-    transition: background-color 0.3s ease-in-out !important; /* Smooth transition for color change */
-    border: none !important; /* Removes any borders */
-    display: inline-block !important; /* Ensures proper display */
+    border-radius: 34px !important; /* Make the toggle rounded */
+    position: relative !important; /* Position it to allow for thumb movement */
+    outline: none !important; /* Remove any outline */
+    cursor: pointer !important; /* Change cursor on hover */
+    transition: background-color 0.4s !important; /* Smooth background transition */
   }
 
-  /* Creating the thumb inside the toggle */
+  /* Thumb inside the toggle */
   .toggle-checkbox::before {
-    content: '' !important; /* Pseudo-element for the thumb */
-    position: absolute !important; /* Positioned within the toggle */
-    top: 2px !important; /* Vertical positioning */
-    left: 2px !important; /* Horizontal positioning */
-    width: 16px !important; /* Width of the thumb */
-    height: 16px !important; /* Height of the thumb */
+    content: '' !important; /* Creates the thumb */
+    position: absolute !important; /* Position inside the toggle */
+    width: 20px !important; /* Thumb width */
+    height: 20px !important; /* Thumb height */
     background-color: white !important; /* Thumb color */
     border-radius: 50% !important; /* Make the thumb round */
-    transition: transform 0.3s ease-in-out !important; /* Smooth transition when toggled */
+    top: 2px !important; /* Position from the top */
+    left: 2px !important; /* Position from the left */
+    transition: transform 0.4s !important; /* Smooth thumb transition */
   }
 
-  /* Style when the checkbox is checked */
+  /* Checked state styles */
   .toggle-checkbox:checked {
-    background-color: #007bff !important; /* Change toggle color when checked */
+    background-color: #007bff !important; /* Background color when toggled on */
   }
 
-  /* Move thumb to the right when checked */
+  /* Position the thumb when checked */
   .toggle-checkbox:checked::before {
-    transform: translateX(20px) !important; /* Slide the thumb to the right */
+    transform: translateX(18px) !important; /* Moves the thumb to the right */
   }
 
-  /* Label styling */
+  /* Label styling for alignment */
   .custom-control-label {
-    margin-left: 8px !important; /* Space between the toggle and the text */
-    display: inline-block !important; /* Keep the label inline */
-    vertical-align: middle !important; /* Align the label with the toggle */
+    margin-left: 10px !important; /* Space between the toggle and the label */
+    display: inline-block !important; /* Display the label inline */
+    vertical-align: middle !important; /* Align label with the toggle */
   }
 </style>
 
