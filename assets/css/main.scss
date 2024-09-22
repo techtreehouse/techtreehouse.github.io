@@ -44,6 +44,7 @@
 [data-theme="dark"] .card {
   background-color: #1a1a1a !important;
   border-color: #333 !important;
+  border: 1px solid #555555 !important;
 }
 
 [data-theme="dark"] .card-body {
@@ -165,5 +166,5 @@
 }
 
 [data-theme="dark"] .listfeaturedtag {
-  border: 1px solid #555555
+  border: 2px solid #555555 !important;
 }
