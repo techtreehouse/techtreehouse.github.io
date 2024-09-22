@@ -184,6 +184,6 @@
   color: #ccc !important;
 }
 
-[data-theme="dark"] .form-control::placeholder .text-small::placeholder .launch-modal-search::placeholder {
+[data-theme="dark"] .form-control::placeholder /*.text-small::placeholder .launch-modal-search::placeholder*/ {
   color: #ccc !important;
 }
