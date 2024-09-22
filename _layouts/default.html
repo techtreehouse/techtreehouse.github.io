@@ -78,17 +78,17 @@
 <li class="nav-item">
   <div class="custom-control custom-switch" style="display: flex; align-items: center;">
     <input type="checkbox" class="custom-control-input toggle-checkbox" id="darkSwitch" />
-    <label class="custom-control-label nav-link toggle-label" for="darkSwitch">
+    <label class="custom-control-label nav-link" for="darkSwitch">
       Dark Mode
     </label>
   </div>
 </li>
 
 <style>
-  /* Convert the checkbox into a toggle switch */
+  /* Hide the default checkbox and make it look like a toggle */
   .toggle-checkbox {
-    appearance: none;
     -webkit-appearance: none;
+    appearance: none;
     width: 40px;
     height: 20px;
     background-color: #ccc;
@@ -97,11 +97,11 @@
     outline: none;
     cursor: pointer;
     transition: background-color 0.3s ease;
-    display: inline-block; /* Ensures it displays inline */
-    vertical-align: middle; /* Aligns with the text vertically */
+    display: inline-block;
+    vertical-align: middle;
   }
 
-  /* Toggle Thumb */
+  /* Toggle thumb using the checkbox pseudo-element */
   .toggle-checkbox::before {
     content: '';
     position: absolute;
@@ -114,7 +114,7 @@
     transition: transform 0.3s ease;
   }
 
-  /* Checked State Styling */
+  /* Checkbox when checked */
   .toggle-checkbox:checked {
     background-color: #007bff; /* Blue when active */
   }
@@ -123,15 +123,13 @@
     transform: translateX(20px); /* Slide the thumb to the right */
   }
 
-  /* Label styling */
-  .toggle-label {
-    margin-left: 8px; /* Space between the toggle and the label */
-    cursor: pointer;
-    display: inline-block; /* Ensures it displays inline with the toggle */
-    vertical-align: middle; /* Aligns with the toggle */
+  /* Align the label correctly with the toggle */
+  .custom-control-label {
+    margin-left: 8px;
+    display: inline-block;
+    vertical-align: middle;
   }
 </style>
-
 
 <script>
   // JavaScript to toggle dark mode and update the switch appearance
