@@ -87,32 +87,24 @@
 <style>
 /* Hide the default checkbox */
 .custom-control-input {
-  display: none; /* Hide the checkbox */
+  display: none; /* Completely hide the checkbox */
 }
 
 /* Custom switch styling */
 .custom-control-label {
-  position: relative; /* Position for the switch */
-  padding-right: 50px; /* Padding for text */
-  cursor: pointer; /* Change cursor to pointer */
+  display: flex; /* Keep the label and toggle in line */
+  align-items: center; /* Center the text vertically */
 }
 
 /* Create the toggle */
 .toggle {
-  position: absolute;
-  right: 0; /* Position of toggle */
-  top: 50%;
-  transform: translateY(-50%);
+  position: relative; /* Position for the toggle */
+  display: inline-block; /* Inline block for positioning */
   width: 40px; /* Width of the toggle */
   height: 24px; /* Height of the toggle */
-  background-color: #ccc; /* Background color */
+  background-color: #ccc; /* Default background color */
   border-radius: 50px; /* Rounded edges */
-  transition: background-color 0.3s; /* Smooth transition */
-}
-
-/* Change styles when the checkbox is checked */
-.custom-control-input:checked + .custom-control-label + .toggle {
-  background-color: #007bff; /* Color when checked */
+  cursor: pointer; /* Pointer on hover */
 }
 
 /* Create the thumb */
@@ -127,6 +119,11 @@
   background-color: white; /* Thumb color */
   border-radius: 50%; /* Make the thumb round */
   transition: transform 0.3s; /* Smooth thumb transition */
+}
+
+/* Change styles when the checkbox is checked */
+.custom-control-input:checked + .custom-control-label + .toggle {
+  background-color: #007bff; /* Background color when checked */
 }
 
 /* Move the thumb to the right when checked */
