@@ -14,8 +14,23 @@
     "starsnonscss"
 ;
 
-.darkmode-layer, .darkmode-toggle { z-index: 1000; }
+[data-theme="dark"] {
+  background-color: #111 !important;
+  color: #eee;
+}
 
-body.darkmode--activated img, body.darkmode--activated .darkmode-ignore {
-  mix-blend-mode: difference;
+[data-theme="dark"] .bg-black {
+  background-color: #fff !important;
+}
+
+[data-theme="dark"] .bg-dark {
+  background-color: #eee !important;
+}
+
+[data-theme="dark"] .bg-light {
+  background-color: #222 !important;
+}
+
+[data-theme="dark"] .site-content {
+  background-color: #000 !important;
 }
