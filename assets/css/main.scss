@@ -75,6 +75,10 @@
 
 /* Text Adjustments */
 [data-theme="dark"] .text-dark {
+  color: #ccc !important;
+}
+
+[data-theme="dark"] .text-dark:hover {
   color: #eee !important;
 }
 
@@ -139,6 +143,11 @@
   border: 1px solid #333 !important;
 }
 
+[data-theme="dark"] .form-control {
+  background-color: #444 !important;
+  color: #eee !important;
+}
+
 [data-theme="dark"] .search-bar input {
   background-color: #111 !important;
   color: #eee !important;
@@ -149,3 +158,4 @@
   background-color: #444 !important;
   color: #eee !important;
 }
+
