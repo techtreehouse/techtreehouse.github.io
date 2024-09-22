@@ -24,3 +24,7 @@
 [data-theme="dark"] .site-content {
   background-color: #000 !important;
 }
+
+[data-theme="dark"] .col-12 {
+  background-color: #000 !important;
+}
