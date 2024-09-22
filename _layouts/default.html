@@ -75,57 +75,56 @@
                 <a target="_blank" class="nav-link" href="https://buymeacoffee.com/techtreehouse"><i class="fas fa-coffee"></i> Buy me a coffee!</a>
                 </li>
 
-		<li class="nav-item">
+<li class="nav-item">
   <div class="custom-control custom-switch">
-    <input type="checkbox" class="custom-control-input" id="darkSwitch" style="display: none !important;" />
-    <label class="custom-control-label nav-link" for="darkSwitch" id="darkModeToggle">
-      <div class="toggle-switch">
-        <div class="toggle-thumb"></div>
-      </div>
+    <input type="checkbox" class="custom-control-input toggle-checkbox" id="darkSwitch" />
+    <label class="custom-control-label nav-link toggle-label" for="darkSwitch">
       Dark Mode
     </label>
   </div>
 </li>
 
 <style>
-  /* Toggle Switch Container */
-  .toggle-switch {
-    display: inline-block;
+  /* Hide the default checkbox but keep it functional */
+  .toggle-checkbox {
+    appearance: none;
+    -webkit-appearance: none;
     width: 40px;
     height: 20px;
     background-color: #ccc;
     border-radius: 20px;
     position: relative;
+    outline: none;
+    cursor: pointer;
     transition: background-color 0.3s ease;
-    vertical-align: middle;
-    margin-right: 8px; /* Space between toggle and text */
   }
 
   /* Toggle Thumb */
-  .toggle-thumb {
+  .toggle-checkbox::before {
+    content: '';
     position: absolute;
+    top: 2px;
+    left: 2px;
     width: 16px;
     height: 16px;
     background-color: white;
     border-radius: 50%;
-    top: 2px;
-    left: 2px;
     transition: transform 0.3s ease;
   }
 
-  /* Active State */
-  .toggle-switch.active {
-    background-color: #007bff; /* Blue color when active */
+  /* Checkbox Checked State */
+  .toggle-checkbox:checked {
+    background-color: #007bff; /* Blue when active */
   }
 
-  .toggle-switch.active .toggle-thumb {
-    transform: translateX(20px); /* Move thumb to the right */
+  .toggle-checkbox:checked::before {
+    transform: translateX(20px); /* Move the thumb to the right */
   }
 
-  /* Dark Mode Body Style */
-  .dark-mode {
-    background-color: #121212;
-    color: #f1f1f1;
+  /* Adjust label text styling */
+  .toggle-label {
+    margin-left: 10px;
+    cursor: pointer;
   }
 </style>
 
