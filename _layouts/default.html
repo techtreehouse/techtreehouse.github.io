@@ -78,9 +78,12 @@
 <li class="nav-item">
   <div class="custom-control custom-switch" style="display: flex; align-items: center;">
     <input type="checkbox" class="custom-control-input" id="darkSwitch" />
-    <label class="custom-control-label" for="darkSwitch" style="cursor: pointer; display: flex; align-items: center;">
-      <span class="toggle"></span> Dark Mode
+    <label class="custom-control-label" for="darkSwitch" style="margin-right: 10px; cursor: pointer;">
+      Dark Mode
     </label>
+    <span class="toggle" style="width: 40px; height: 24px; background-color: #ccc; border-radius: 50px; position: relative; display: inline-block; cursor: pointer;">
+      <span style="content: ''; position: absolute; left: 4px; top: 50%; transform: translateY(-50%); width: 16px; height: 16px; background-color: white; border-radius: 50%; transition: transform 0.3s;"></span>
+    </span>
   </div>
 </li>
 
@@ -96,38 +99,13 @@
   align-items: center; /* Center the text vertically */
 }
 
-/* Create the toggle */
-.toggle {
-  position: relative; /* Position for the toggle */
-  display: inline-block; /* Inline block for positioning */
-  width: 40px; /* Width of the toggle */
-  height: 24px; /* Height of the toggle */
-  background-color: #ccc; /* Default background color */
-  border-radius: 50px; /* Rounded edges */
-  cursor: pointer; /* Pointer on hover */
-}
-
-/* Create the thumb */
-.toggle::after {
-  content: '';
-  position: absolute;
-  left: 4px; /* Position from left */
-  top: 50%;
-  transform: translateY(-50%);
-  width: 16px; /* Width of the thumb */
-  height: 16px; /* Height of the thumb */
-  background-color: white; /* Thumb color */
-  border-radius: 50%; /* Make the thumb round */
-  transition: transform 0.3s; /* Smooth thumb transition */
-}
-
 /* Change styles when the checkbox is checked */
 .custom-control-input:checked + .custom-control-label + .toggle {
   background-color: #007bff; /* Background color when checked */
 }
 
 /* Move the thumb to the right when checked */
-.custom-control-input:checked + .custom-control-label + .toggle::after {
+.custom-control-input:checked + .custom-control-label + .toggle span {
   transform: translate(16px, -50%); /* Move the thumb to the right */
 }
 </style>
