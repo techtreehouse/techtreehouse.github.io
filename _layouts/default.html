@@ -75,10 +75,10 @@
                 <a target="_blank" class="nav-link" href="https://buymeacoffee.com/techtreehouse"><i class="fas fa-coffee"></i> Buy me a coffee!</a>
                 </li>
 
-<li class="nav-item" style="margin-left: 15px;"> <!-- Reduced margin for integration -->
-  <div class="custom-control custom-switch">
+<li class="nav-item">
+  <div class="custom-control custom-switch" style="display: flex; align-items: center;">
     <input type="checkbox" class="custom-control-input" id="darkSwitch" />
-    <label class="custom-control-label" for="darkSwitch" style="padding-left: 50px;"> <!-- Space for toggle -->
+    <label class="custom-control-label" for="darkSwitch" style="margin-left: 10px;"> <!-- Space for text -->
       Dark Mode
     </label>
   </div>
@@ -95,7 +95,7 @@
     position: relative; /* Position for the switch */
     cursor: pointer; /* Change cursor to pointer */
     user-select: none; /* Prevent text selection */
-    display: inline-flex; /* Ensure it fits well in the navbar */
+    display: flex; /* Keep label flexible */
     align-items: center; /* Center items vertically */
   }
 
@@ -136,7 +136,7 @@
     transform: translate(18px, -50%); /* Move the thumb to the right */
   }
 </style>
-
+		    
 <script>
   // JavaScript to toggle dark mode and update the switch appearance
   document.getElementById('darkModeToggle').addEventListener('click', function (event) {
