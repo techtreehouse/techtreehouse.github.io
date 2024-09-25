@@ -226,9 +226,11 @@
 
 [data-theme="dark"] .article-post {
   color: #ddd !important;
-  font-family: -apple-system,BlinkMacSystemFont,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji"
 }
--apple-system,BlinkMacSystemFont,sans-serif
+
+.article-post {
+  font-family: -apple-system,BlinkMacSystemFont,sans-serif,"Apple Color Emoji","Segoe UI Emoji","Segoe UI Symbol","Noto Color Emoji" !important;
+}
 
 [data-theme="dark"] span.post-date, span.post-read {
   color: #ddd !important;
