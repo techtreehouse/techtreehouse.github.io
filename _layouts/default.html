@@ -91,18 +91,20 @@
 	<script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
 	</li>-->
 
-	<li class="nav-item">
-        <a target="_blank" class="nav-link" href="#" onclick="loadScript(event)"><i class="fas fa-coffee"></i> Dark Mode</a>
-        </li>
+<li class="nav-item">
+    <a target="_blank" class="nav-link" href="#" onclick="loadScript(event)">
+        <i class="fas fa-coffee"></i> Dark Mode
+    </a>
+</li>
 
-	<script>
-	  function loadScript(event) {
-	    event.preventDefault();
-	    var script = document.createElement('script');
-	    script.src = '{{ site.baseurl }}/dark-mode-switch.min.js'; // Path to your JS file
-	    document.body.appendChild(script);
-	  }
-	</script>
+<script>
+function loadScript(event) {
+    event.preventDefault(); // Prevent the default action of the link
+    const script = document.createElement('script');
+    script.src = '{{ site.baseurl }}/dark-mode-switch.min.js'; // Path to your dark mode script
+    document.head.appendChild(script);
+}
+</script>
 		    
 <style>
 .toggle {
