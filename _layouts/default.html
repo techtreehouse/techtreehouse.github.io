@@ -17,6 +17,21 @@
 
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
+<script>
+        // Define the function in the global scope
+        function loadScript(url) {
+            var script = document.createElement('script');
+            script.src = url;
+            script.onload = function() {
+                console.log('Script loaded successfully.');
+            };
+            script.onerror = function() {
+                console.error('Error loading script.');
+            };
+            document.head.appendChild(script);
+        }
+</script>
+
 </head>
 
 {% if jekyll.environment == 'production' %}
@@ -92,19 +107,10 @@
 	</li>-->
 
 <li class="nav-item">
-    <a target="_blank" class="nav-link" href="javascript:null" onClick="javascript:loadScript(event)">
+    <a target="_blank" class="nav-link" href="javascript:null" onClick="javascript:loadScript("https://techtreehouse.github.io/dark-mode-switch.min.js")">
         <i class="fas fa-coffee"></i> Dark Mode
     </a>
 </li>
-
-<script>
-function loadScript(event) {
-    event.preventDefault(); // Prevent the default action of the link
-    const script = document.createElement('script');
-    script.src = 'https://techtreehouse.github.io/dark-mode-switch.min.js'; // Path to your dark mode script
-    document.head.appendChild(script);
-}
-</script>
 		    
 <style>
 .toggle {
