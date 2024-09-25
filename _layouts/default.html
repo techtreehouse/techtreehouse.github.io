@@ -106,45 +106,6 @@
   cursor: pointer !important;
   opacity: 0 !important;
 }
-.toggle label {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  height: 36px !important;
-  box-sizing: border-box !important;
-}
-.toggle label:before {
-  content: "" !important;
-  width: 72px !important;
-  height: 36px !important;
-  border-radius: 20px !important;
-  position: relative !important;
-  display: inline-block !important;
-  transition: 0.2s ease !important;
-  box-sizing: border-box !important;
-  background-color: #333 !important;
-  box-shadow: 0 0 12px #0003, inset -72px 0 #fff !important;
-}
-.toggle label:after {
-  content: '' !important;
-  position: relative !important;
-  width: 20px !important;
-  height: 20px !important;
-  background: #444 !important;
-  border-radius: 20px !important;
-  box-sizing: border-box !important;
-  left: 0 !important;
-  top: 0 !important;
-  transform: translate(8px , 8px) !important;
-  transition: 0.2s ease !important;
-}
-.toggle input[type="checkbox"]:checked + label:after {
-  background: #FFF !important;
-  transform: translate(47px, 8px) !important;
-}
-.toggle input[type="checkbox"]:checked + label:before {
-  box-shadow: 0 0 12px #0003, inset 0 0 #fff !important;
-}
 </style>
 		    
                 {% include search-lunr.html %}
