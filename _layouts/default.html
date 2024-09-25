@@ -72,7 +72,7 @@
                 </li>
 
 		<li class="nav-item">
-                <a target="_blank" class="nav-link" href="https://buymeacoffee.com/techtreehouse"><i class="fas fa-coffee"></i> Buy me a coffee!&nbsp&nbsp&nbsp&nbsp</a>
+                <a target="_blank" class="nav-link" href="https://buymeacoffee.com/techtreehouse"><i class="fas fa-coffee"></i> Buy me a coffee!</a>
                 </li>
 
 <!--<li class="nav-item">
@@ -83,68 +83,68 @@
 <script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
 </li>-->
 		    
-<li class="nav-item">
-<div class="toggle custom-control custom-switch">
-    <input type="checkbox" class="custom-control-input" id="darkSwitch"/>
-    <label class="custom-control-label nav-link" for="darkSwitch">Dark Mode</label>
-</div>
-<script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
-</li>
+	<li class="nav-item">
+	<div class="toggle custom-control custom-switch">
+ 	   <input type="checkbox" class="custom-control-input" id="darkSwitch"/>
+	    <label class="custom-control-label nav-link" for="darkSwitch">Dark Mode</label>
+	</div>
+	<script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
+	</li>
 		    
-<style>
-.toggle {
-  position: relative;
-  box-sizing: border-box;
-}
-.toggle input[type="checkbox"] {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  width: 100%;
-  height: 100%;
-  cursor: pointer;
-  opacity: 0;
-}
-.toggle label {
-  position: relative;
-  display: flex;
-  align-items: center;
-  height: 36px;
-  box-sizing: border-box;
-}
-.toggle label:before {
-  content: "";
-  width: 72px;
-  height: 36px;
-  border-radius: 20px;
-  position: relative;
-  display: inline-block;
-  transition: 0.2s ease;
-  box-sizing: border-box;
-  background-color: #333;
-  box-shadow: 0 0 12px #0003, inset -72px 0 #fff;
-}
-.toggle label:after {
-  content: '';
-  position: absolute;
-  width: 20px;
-  height: 20px;
-  background: #444;
-  border-radius: 20px;
-  box-sizing: border-box;
-  left: 0;
-  top: 0;
-  transform: translate(8px , 8px);
-  transition: 0.2s ease;
-}
-.toggle input[type="checkbox"]:checked + label:after {
-  background: #FFF;
-  transform: translate(47px, 8px);
-}
-.toggle input[type="checkbox"]:checked + label:before {
-  box-shadow: 0 0 12px #0003, inset 0 0 #fff;
-}
+	<style>
+	.toggle {
+	  position: relative;
+	  box-sizing: border-box;
+	}
+	.toggle input[type="checkbox"] {
+	  position: absolute;
+	  left: 0;
+	  top: 0;
+	  z-index: 10;
+	  width: 100%;
+	  height: 100%;
+	  cursor: pointer;
+	  opacity: 0;
+	}
+	.toggle label {
+	  position: relative;
+	  display: flex;
+	  align-items: center;
+	  height: 36px;
+	  box-sizing: border-box;
+	}
+	.toggle label:before {
+	  content: "";
+	  width: 72px;
+	  height: 36px;
+	  border-radius: 20px;
+	  position: relative;
+	  display: inline-block;
+	  transition: 0.2s ease;
+	  box-sizing: border-box;
+	  background-color: #333;
+	  box-shadow: 0 0 12px #0003, inset -72px 0 #fff;
+	}
+	.toggle label:after {
+	  content: '';
+	  position: absolute;
+	  width: 20px;
+	  height: 20px;
+	  background: #444;
+	  border-radius: 20px;
+	  box-sizing: border-box;
+	  left: 0;
+	  top: 0;
+	  transform: translate(8px , 8px);
+	  transition: 0.2s ease;
+	}
+	.toggle input[type="checkbox"]:checked + label:after {
+	  background: #FFF;
+	  transform: translate(47px, 8px);
+	}
+	.toggle input[type="checkbox"]:checked + label:before {
+	  box-shadow: 0 0 12px #0003, inset 0 0 #fff;
+	}
 </style>
 		    
                 {% include search-lunr.html %}
