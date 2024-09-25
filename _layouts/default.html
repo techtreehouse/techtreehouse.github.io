@@ -75,65 +75,76 @@
                 <a target="_blank" class="nav-link" href="https://buymeacoffee.com/techtreehouse"><i class="fas fa-coffee"></i> Buy me a coffee!&nbsp&nbsp&nbsp&nbsp</a>
                 </li>
 
-<li class="nav-item">
+<!--<li class="nav-item">
   <div class="custom-control custom-switch" style="display: flex; align-items: center;">
     <input type="checkbox" class="custom-control-input" id="darkSwitch" />
     <label class="custom-control-label nav-link" for="darkSwitch">&nbspDark Mode</label>
   </div>
 <script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
+</li>-->
+		    
+<li class="nav-item">
+<div class="toggle custom-control custom-switch">
+    <input type="checkbox" class="custom-control-input" id="darkSwitch"/>
+    <label class="custom-control-label nav-link" for="darkSwitch">Dark Mode</label>
+</div>
+<script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
 </li>
-
+		    
 <style>
-  /* Hide the default checkbox */
-  .custom-control-input {
-    display: none; /* Hide the checkbox */
-  }
-
-  /* Custom switch styling */
-  .custom-control-label {
-    position: relative; /* Position for the switch */
-    padding-left: 60px; /* Padding for text */
-    cursor: pointer; /* Change cursor to pointer */
-    user-select: none; /* Prevent text selection */
-  }
-
-  /* Create the toggle switch */
-  .custom-control-label::before {
-    content: '';
-    position: absolute;
-    left: -30px; /* Move the toggle to the left */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px; /* Width of the switch */
-    height: 24px; /* Height of the switch */
-    background-color: #ccc; /* Background color */
-    border-radius: 34px; /* Rounded edges */
-    transition: background-color 0.3s; /* Smooth transition */
-    cursor: pointer;
-  }
-
-  /* Create the toggle thumb */
-  .custom-control-label::after {
-    content: '';
-    position: absolute;
-    left: -26px; /* Position from left */
-    top: 50%;
-    transform: translateY(-50%);
-    width: 16px; /* Width of the thumb */
-    height: 16px; /* Height of the thumb */
-    background-color: white; /* Thumb color */
-    border-radius: 50%; /* Make the thumb round */
-    transition: transform 0.3s; /* Smooth thumb transition */
-  }
-
-  /* Change styles when the checkbox is checked */
-  .custom-control-input:checked + .custom-control-label::before {
-    background-color: #007bff; /* Color when checked */
-  }
-
-  .custom-control-input:checked + .custom-control-label::after {
-    transform: translate(16px, -50%); /* Move the thumb to the right */
-  }
+.toggle {
+  position: relative;
+  box-sizing: border-box;
+}
+.toggle input[type="checkbox"] {
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  cursor: pointer;
+  opacity: 0;
+}
+.toggle label {
+  position: relative;
+  display: flex;
+  align-items: center;
+  height: 36px;
+  box-sizing: border-box;
+}
+.toggle label:before {
+  content: "";
+  width: 72px;
+  height: 36px;
+  border-radius: 20px;
+  position: relative;
+  display: inline-block;
+  transition: 0.2s ease;
+  box-sizing: border-box;
+  background-color: #333;
+  box-shadow: 0 0 12px #0003, inset -72px 0 #fff;
+}
+.toggle label:after {
+  content: '';
+  position: absolute;
+  width: 20px;
+  height: 20px;
+  background: #444;
+  border-radius: 20px;
+  box-sizing: border-box;
+  left: 0;
+  top: 0;
+  transform: translate(8px , 8px);
+  transition: 0.2s ease;
+}
+.toggle input[type="checkbox"]:checked + label:after {
+  background: #FFF;
+  transform: translate(47px, 8px);
+}
+.toggle input[type="checkbox"]:checked + label:before {
+  box-shadow: 0 0 12px #0003, inset 0 0 #fff;
+}
 </style>
 		    
                 {% include search-lunr.html %}
