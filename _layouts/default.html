@@ -19,25 +19,12 @@
 
 <script>
 function loadScript() {
-    // Create a script element
-    let script = document.createElement('script');
-    
-    // Set the src attribute to the file path you want to load
-    script.src = "{{ site.baseurl }}/dark-mode-switch.min.js";
-    
-    // Append the script element to the document's <head> or <body>
-    document.head.appendChild(script);
-    
-    // Optional: Add an onload handler if you need to execute code after it loads
-    script.onload = function() {
-        console.log("Dark mode script loaded!");
-        // You can now call functions or use variables from dark-mode-switch.min.js if necessary
-    };
-    
-    // Optional: Error handling if the script fails to load
-    script.onerror = function() {
-        console.error("Failed to load dark mode script.");
-    };
+/*!
+ * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
+ * Copyright 2021 C.Oliff
+ * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
+ */
+var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
 }
 </script>
 
