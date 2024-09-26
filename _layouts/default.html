@@ -18,21 +18,27 @@
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
 <script>
-        // Define the function in the global scope
-function loadScript(url) {
-    // Create a new script element
+function loadScript() {
+    // Create a script element
     let script = document.createElement('script');
     
-    // Set the source to the path of the external JavaScript file
-    script.src = url;
+    // Set the src attribute to the file path you want to load
+    script.src = "{{ site.baseurl }}/dark-mode-switch.min.js";
     
-    // Optionally, set the script to load asynchronously
-    script.async = true;
-
-    // Append the script to the document's head or body
+    // Append the script element to the document's <head> or <body>
     document.head.appendChild(script);
+    
+    // Optional: Add an onload handler if you need to execute code after it loads
+    script.onload = function() {
+        console.log("Dark mode script loaded!");
+        // You can now call functions or use variables from dark-mode-switch.min.js if necessary
+    };
+    
+    // Optional: Error handling if the script fails to load
+    script.onerror = function() {
+        console.error("Failed to load dark mode script.");
+    };
 }
-
 </script>
 
 </head>
@@ -110,7 +116,7 @@ function loadScript(url) {
 	</li>-->
 
 <li class="nav-item">
-    <a target="_blank" class="nav-link" href="" onClick="javascript:loadScript(https://techtreehouse.github.io/dark-mode-switch.min.js)">
+    <a target="_blank" class="nav-link" href="javascript:loadScript()" onClick="javascript:loadScript()">
         <i class="fas fa-coffee"></i> Dark Mode
     </a>
 </li>
