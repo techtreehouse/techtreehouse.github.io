@@ -105,9 +105,7 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 <li class="nav-item">
   <div class="custom-control custom-switch toggle">
     <input type="checkbox" class="custom-control-input" id="darkSwitch">
-    <label class="custom-control-label" for="darkSwitch" style="cursor: pointer;">
-      <i class="fas fa-coffee"></i> Dark Mode
-    </label>
+    <label class="custom-control-label" for="darkSwitch" style="cursor: pointer;"><i class="fas fa-coffee"></i> Dark Mode</label>
   </div>
   <script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
 </li>
@@ -121,21 +119,12 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 
 		    
 <style>
-.darkstyle [type="checkbox"] {
-  position: absolute;
-  left: 0;
-  top: 0;
-  z-index: 10;
-  width: 0;
-  height: 0;
-  cursor: pointer;
-  opacity: 0;
-}
 .toggle {
   position: relative;
   box-sizing: border-box;
 }
 .toggle input[type="checkbox"] {
+  display: none;
   position: absolute;
   left: 0;
   top: 0;
