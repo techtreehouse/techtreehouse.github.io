@@ -104,10 +104,6 @@ section.recent-posts {
     }
 }
 
-.nav-link[type="checkbox"] {
-  display: none !important;
-}
-
 .listfeaturedtag {
     border: 1px solid rgba(0, 0, 0, .125);
     border-radius: .25rem;
