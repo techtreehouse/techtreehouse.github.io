@@ -23,7 +23,7 @@ document.addEventListener('DOMContentLoaded', updateContent);
 window.addEventListener("load", (function() {
     if (theme) {
         updateContent()
-        darkSwitch.addEventListener("change", (function() {
+        theme.addEventListener("change", (function() {
             updateContent()
         }))
     }
