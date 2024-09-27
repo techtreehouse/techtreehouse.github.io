@@ -17,17 +17,6 @@
 
 <script src="{{ site.baseurl }}/assets/js/jquery.min.js"></script>
 
-<script>
-function loadScript() {
-/*!
- * Dark Mode Switch v1.0.1 (https://github.com/coliff/dark-mode-switch)
- * Copyright 2021 C.Oliff
- * Licensed under MIT (https://github.com/coliff/dark-mode-switch/blob/main/LICENSE)
- */
-var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("load",(function(){if(darkSwitch){initTheme();darkSwitch.addEventListener("change",(function(){resetTheme()}))}}));function initTheme(){var darkThemeSelected=localStorage.getItem("darkSwitch")!==null&&localStorage.getItem("darkSwitch")==="dark";darkSwitch.checked=darkThemeSelected;darkThemeSelected?document.body.setAttribute("data-theme","dark"):document.body.removeAttribute("data-theme")}function resetTheme(){if(darkSwitch.checked){document.body.setAttribute("data-theme","dark");localStorage.setItem("darkSwitch","dark")}else{document.body.removeAttribute("data-theme");localStorage.removeItem("darkSwitch")}}
-}
-</script>
-
 </head>
 
 {% if jekyll.environment == 'production' %}
@@ -42,7 +31,18 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
 		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
 	</noscript>
-
+<script>
+function updateContent() {
+	const theme = localStorage.getItem('darkSwitch');
+	const contentDiv = document.getElementById('thelabel');
+	if (theme === 'dark') {
+		contentDiv.innerHTML = " Dark Mode";
+	} else {
+		contentDiv.innerHTML = " Light Mode";
+	}
+}
+document.addEventListener('DOMContentLoaded', updateContent);
+</script>
 
 <!-- Begin Menu Navigation
 ================================================== -->
@@ -113,7 +113,7 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 <li class="nav-item">
 <div class="custom-control custom-switch">
 <input class="custom-control-input" type="checkbox" id="darkSwitch" hidden="">
-<label class="custom-control-label nav-link" for="darkSwitch"><i class="fas fa-coffee"></i> Dark Mode</label>
+<label class="custom-control-label nav-link" id="thelabel" for="darkSwitch"><i class="fas fa-moon"></i> Dark Mode</label>
 </div>
 <script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
 </li>
