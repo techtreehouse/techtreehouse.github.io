@@ -1,4 +1,5 @@
 const theme = localStorage.getItem('darkSwitch');
+const darkSwitch = document.getElementById('darkSwitch');
 const contentDiv = document.getElementById('thelabel');
 const iconDiv = document.getElementById('myIcon');
 
@@ -19,7 +20,6 @@ document.addEventListener('DOMContentLoaded', updateContent);
 /*document.addEventListener('change', function() {
 	updateContent();
 });*/
-
 darkSwitch.addEventListener('change', function() {
   updateContent();
 });
