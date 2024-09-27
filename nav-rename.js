@@ -21,10 +21,10 @@ document.addEventListener('DOMContentLoaded', updateContent);
 });*/
 
 window.addEventListener("load", (function() {
-    if (darkSwitch) {
-        initTheme();
+    if (theme) {
+        updateContent()
         darkSwitch.addEventListener("change", (function() {
-            resetTheme()
+            updateContent()
         }))
     }
 }));
