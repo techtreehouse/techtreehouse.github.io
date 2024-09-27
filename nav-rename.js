@@ -20,8 +20,8 @@ document.addEventListener('DOMContentLoaded', updateContent);
 	updateContent();
 });*/
 
-window.addEventListener("storage", (function() {
-	if(event.key === 'darkSwitch') {
-		updateContent();
+window.addEventListener("storage", function(event) {
+    if (event.key === 'darkSwitch') {
+        updateContent();
     }
-}));
+});
