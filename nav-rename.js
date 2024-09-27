@@ -24,4 +24,4 @@ window.addEventListener("storage", (function() {
 	if(event.key === 'darkSwitch') {
 		updateContent();
     }
-});
+}));
