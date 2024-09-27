@@ -3,9 +3,7 @@ const contentDiv = document.getElementById('thelabel');
 const iconDiv = document.getElementById('myIcon');
 
 // Function to update the content based on the toggle state
-function updateContent() {
-  const theme = localStorage.getItem('darkSwitch');
-  
+function updateContent(theme) {
   if (theme === 'dark') {
     document.documentElement.setAttribute('data-theme', 'dark');
     contentDiv.innerHTML = " Light Mode";
@@ -21,18 +19,18 @@ function updateContent() {
 
 // Check stored theme preference and apply it on load
 document.addEventListener('DOMContentLoaded', function() {
-  if (localStorage.getItem('darkSwitch') === 'dark') {
-    darkSwitch.checked = true;
-  }
-  updateContent();
+  const theme = localStorage.getItem('darkSwitch') === 'dark' ? 'dark' : 'light';
+  darkSwitch.checked = theme === 'dark';  // Check the switch if theme is dark
+  updateContent(theme);  // Update content on load
 });
 
 // Listen for the change event on the checkbox
 darkSwitch.addEventListener('change', function() {
-  if (darkSwitch.checked) {
+  const theme = darkSwitch.checked ? 'dark' : 'light';
+  if (theme === 'dark') {
     localStorage.setItem('darkSwitch', 'dark');
   } else {
     localStorage.removeItem('darkSwitch');
   }
-  updateContent();
+  updateContent(theme);  // Update content on switch change
 });
