@@ -20,11 +20,8 @@ document.addEventListener('DOMContentLoaded', updateContent);
 	updateContent();
 });*/
 
-window.addEventListener("load", (function() {
-    if (theme) {
-        updateContent()
-        theme.addEventListener("change", (function() {
-            updateContent()
-        }))
+window.addEventListener("storage", (function() {
+	if(event.key === 'darkSwitch') {
+		updateContent();
     }
-}));
+});
