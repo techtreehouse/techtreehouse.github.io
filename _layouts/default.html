@@ -37,7 +37,7 @@ function updateContent() {
 	const contentDiv = document.getElementById('thelabel');
 	if (theme === 'dark') {
 		contentDiv.innerHTML = "<i class="fas fa-moon"></i> Dark Mode";
-	} else if(theme === 'null') {
+	} else /*if(theme === 'null')*/ {
 		contentDiv.innerHTML = "<i class="fas fa-sun"></i> Light Mode";
 	}
 }
