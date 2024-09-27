@@ -2,35 +2,37 @@ const darkSwitch = document.getElementById('darkSwitch');
 const contentDiv = document.getElementById('thelabel');
 const iconDiv = document.getElementById('myIcon');
 
-// Function to update the content based on the toggle state
-function updateContent(theme) {
-  if (theme === 'dark') {
-    document.documentElement.setAttribute('data-theme', 'dark');
+// Function to update the label and icon based on the current state of the toggle
+function updateContent() {
+  if (darkSwitch.checked) {
     contentDiv.innerHTML = " Light Mode";
-    iconDiv.classList.add('visible', 'fa-sun');
+    iconDiv.classList.add('fa-sun');
     iconDiv.classList.remove('fa-moon');
   } else {
-    document.documentElement.removeAttribute('data-theme');
     contentDiv.innerHTML = " Dark Mode";
-    iconDiv.classList.add('visible', 'fa-moon');
+    iconDiv.classList.add('fa-moon');
     iconDiv.classList.remove('fa-sun');
   }
 }
 
-// Check stored theme preference and apply it on load
+// On page load, check the theme from localStorage and set the toggle accordingly
 document.addEventListener('DOMContentLoaded', function() {
-  const theme = localStorage.getItem('darkSwitch') === 'dark' ? 'dark' : 'light';
-  darkSwitch.checked = theme === 'dark';  // Check the switch if theme is dark
-  updateContent(theme);  // Update content on load
+  const theme = localStorage.getItem('darkSwitch');
+  darkSwitch.checked = (theme === 'dark'); // Set the toggle state
+  updateContent(); // Update the label and icon based on the toggle
 });
 
-// Listen for the change event on the checkbox
+// Listen for changes to the toggle
 darkSwitch.addEventListener('change', function() {
-  const theme = darkSwitch.checked ? 'dark' : 'light';
-  if (theme === 'dark') {
-    localStorage.setItem('darkSwitch', 'dark');
-  } else {
-    localStorage.removeItem('darkSwitch');
+  const newTheme = darkSwitch.checked ? 'dark' : 'light';
+  localStorage.setItem('darkSwitch', newTheme); // Store the new theme in localStorage
+  updateContent(); // Update the label and icon after toggling
+});
+
+// Optional: Listen for storage changes across tabs
+window.addEventListener('storage', function(event) {
+  if (event.key === 'darkSwitch') {
+    darkSwitch.checked = (event.newValue === 'dark'); // Sync the toggle state
+    updateContent(); // Update the label and icon across windows
   }
-  updateContent(theme);  // Update content on switch change
 });
