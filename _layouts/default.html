@@ -102,14 +102,6 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 	<script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
 	</li>-->
 
-<li class="nav-item">
-  <div class="custom-control custom-switch toggle">
-    <input type="checkbox" class="custom-control-input" id="darkSwitch">
-    <label class="custom-control-label" for="darkSwitch" style="cursor: pointer;"><i class="fas fa-coffee"></i> Dark Mode</label>
-  </div>
-  <script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
-</li>
-
 <!--<li class="nav-item">
 <div class="custom-control custom-switch">
   <a class="nav-link custom-control-input" id="darkSwitch"><i class="fas fa-coffee custom-control-label" for="darkSwitch"> Dark Mode</a>
@@ -117,30 +109,16 @@ var darkSwitch=document.getElementById("darkSwitch");window.addEventListener("lo
 <script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
 </li>-->
 
+
+<li class="nav-item">
+<div class="custom-control custom-switch">
+<input class="form-check-input" type="checkbox" id="darkModeToggle" hidden="">
+<label class="form-check-label" for="darkModeToggle">Dark Mode</label>
+</div>
+</li>
 		    
 <style>
-.toggle {
-  position: relative !important;
-  box-sizing: border-box !important;
-}
-.nav-item .toggle input[type="checkbox"] {
-  display: none !important;
-  position: absolute !important;
-  left: 0 !important;
-  top: 0 !important;
-  z-index: 10 !important;
-  width: 100% !important;
-  height: 100% !important;
-  cursor: pointer !important;
-  opacity: 0 !important;
-}
-.toggle label {
-  position: relative !important;
-  display: flex !important;
-  align-items: center !important;
-  height: 36px !important;
-  box-sizing: border-box !important;
-}
+
 </style>
 		    
                 {% include search-lunr.html %}
