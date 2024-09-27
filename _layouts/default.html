@@ -36,12 +36,12 @@
 function updateContent() {
 	const theme = localStorage.getItem('darkSwitch');
 	const contentDiv = document.getElementById('thelabel');
+	const iconDiv = document.getElementById('icon');
 	if (theme === 'dark') {
 		contentDiv.innerHTML = " Light Mode";
 	} else if(theme === 'null') {
 		contentDiv.innerHTML = " Dark Mode";
 	}
-	const iconDiv = document.getElementById('icon');
 	if (theme === 'dark') {
 		iconDiv.classList.remove('fa-moon');
 		iconDiv.classList.add('fa-sun');
