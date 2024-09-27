@@ -4,7 +4,7 @@ const iconDiv = document.getElementById('myIcon');
 
 // Function to update the label and icon based on the current state of the toggle
 function updateContent() {
-  const theme = darkSwitch.checked ? 'dark' : 'light'; // Directly check the toggle state
+  const theme = localStorage.getItem('darkSwitch'); // Retrieve current theme from localStorage
   if (theme === 'dark') {
     contentDiv.innerHTML = " Light Mode";
     iconDiv.classList.add('fa-sun');
