@@ -42,6 +42,9 @@ function updateContent() {
 	}
 }
 document.addEventListener('DOMContentLoaded', updateContent);
+document.addEventListener('change', function() {
+	updateContent();
+});
 </script>
 
 <!-- Begin Menu Navigation
