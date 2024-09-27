@@ -37,9 +37,17 @@ function updateContent() {
 	const theme = localStorage.getItem('darkSwitch');
 	const contentDiv = document.getElementById('thelabel');
 	if (theme === 'dark') {
-		contentDiv.innerHTML = "<i class="fas fa-sun"></i> Light Mode";
+		contentDiv.innerHTML = " Light Mode";
 	} else if(theme === 'null') {
-		contentDiv.innerHTML = "<i class="fas fa-moon"></i> Dark Mode";
+		contentDiv.innerHTML = " Dark Mode";
+	}
+	const iconDiv = document.getElementById('icon');
+	if (theme === 'dark') {
+		iconDiv.classList.remove('fa-moon');
+		iconDiv.classList.add('fa-sun');
+	} else if(theme === 'null') {
+		iconDiv.classList.remove('fa-sun');
+		iconDiv.classList.add('fa-moon');
 	}
 }
 document.addEventListener('DOMContentLoaded', updateContent);
@@ -117,7 +125,7 @@ document.addEventListener('DOMContentLoaded', updateContent);
 <li class="nav-item">
 <div class="custom-control custom-switch">
 <input class="custom-control-input" type="checkbox" id="darkSwitch" hidden="">
-<label class="custom-control-label nav-link" id="thelabel" for="darkSwitch"><i class="fas fa-moon"></i> Dark Mode</label>
+<label class="custom-control-label nav-link" id="thelabel" for="darkSwitch"><i class="fas fa-moon" id="icon"></i> Dark Mode</label>
 </div>
 <script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
 </li>
