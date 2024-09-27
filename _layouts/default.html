@@ -43,11 +43,13 @@ function updateContent() {
 		contentDiv.innerHTML = " Dark Mode";
 	}
 	if (theme === 'dark') {
-		iconDiv.classList.remove('fa-moon');
+		iconDiv.classList.add('visible');
 		iconDiv.classList.add('fa-sun');
+		iconDiv.classList.remove('fa-moon');
 	} else if(theme === 'null') {
-		iconDiv.classList.remove('fa-sun');
+		iconDiv.classList.add('visible');
 		iconDiv.classList.add('fa-moon');
+		iconDiv.classList.remove('fa-sun');
 	}
 }
 document.addEventListener('DOMContentLoaded', updateContent);
