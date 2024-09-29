@@ -248,3 +248,11 @@
   border-color: #00ab6b !important;
   color: #fff !important;
 }
+
+[data-theme="dark"] .close {
+  color: #fff !important;
+}
+
+[data-theme="dark"] .close::hover {
+  color: #ddd !important;
+}
