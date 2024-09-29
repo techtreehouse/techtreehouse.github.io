@@ -250,5 +250,9 @@
 }
 
 [data-theme="dark"] .close {
+  color: #ddd !important;
+}
+
+[data-theme="dark"] .close::hover {
   color: #fff !important;
 }
