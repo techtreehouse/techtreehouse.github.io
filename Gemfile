@@ -7,6 +7,12 @@ source "https://rubygems.org"
 #     bundle exec jekyll serve
 #
 
+gem "jekyll", "~> 3.9"
+gem "webrick", "~> 1.8"
+gem "kramdown-parser-gfm", "~> 1.1"
+gem "base64"
+gem "bigdecimal"
+
 # If you have any plugins, put them here!
 gem 'wdm', '>= 0.1.0' if Gem.win_platform?
 group :jekyll_plugins do

@@ -3,23 +3,17 @@ layout: null
 sitemap: false
 ---
 
-{% assign counter = 0 %}
-var documents = [{% for page in site.posts %}{
-    "id": {{ counter }},
-    "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
-    "title": "{{ page.title | replace: '"', ' ' }}",
-    "body": "{{ page.date | date: "%Y/%m/%d" }} - {{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"
-    }{% unless forloop.last %}, {% endunless %}{% endfor %}];
-
-var idx = lunr(function () {
-    this.ref("id");
-    this.field("title", { boost: 12 });
-    this.field("body");
-
-    documents.forEach(function (doc) {
-        this.add(doc);
-    }, this);
-});
+var documents = [
+{% for page in site.posts %}
+  {
+    "id": {{ forloop.index0 | jsonify }},
+    "url": {{ page.url | absolute_url | jsonify }},
+    "title": {{ page.title | strip_html | normalize_whitespace | jsonify }},
+    "date": {{ page.date | date: "%Y-%m-%d" | jsonify }},
+    "body": {{ page.content | markdownify | strip_html | normalize_whitespace | jsonify }}
+  }{% unless forloop.last %},{% endunless %}
+{% endfor %}
+];
 
 var searchElements = {
     trigger: null,
@@ -27,10 +21,7 @@ var searchElements = {
     shell: null,
     backdrop: null,
     panel: null,
-    title: null,
-    count: null,
-    list: null,
-    empty: null
+    list: null
 };
 var searchPanelOpen = false;
 
@@ -51,112 +42,134 @@ function truncateText(text, length) {
     return normalized.slice(0, length).trim() + "...";
 }
 
-function tokenize(term) {
-    return term.trim().toLowerCase().split(/\s+/).filter(Boolean);
+function escapeRegExp(value) {
+    return String(value).replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 }
 
-function buildQuery(tokens) {
-    return tokens.map(function (token) {
-        return token + "*";
-    }).join(" ");
+function normalizeText(value) {
+    return String(value || "")
+        .toLowerCase()
+        .normalize("NFKD")
+        .replace(/[\u0300-\u036f]/g, "")
+        .replace(/[^a-z0-9]+/g, " ")
+        .replace(/\s+/g, " ")
+        .trim();
+}
+
+function tokenize(term) {
+    return normalizeText(term).split(" ").filter(Boolean);
+}
+
+function highlightText(text, tokens) {
+    var highlighted = escapeHtml(text);
+
+    tokens
+        .slice()
+        .sort(function (a, b) { return b.length - a.length; })
+        .forEach(function (token) {
+            if (!token) {
+                return;
+            }
+
+            var pattern = new RegExp("(" + escapeRegExp(token) + ")", "gi");
+            highlighted = highlighted.replace(pattern, "<strong>$1</strong>");
+        });
+
+    return highlighted;
 }
 
 function scoreDocument(doc, tokens) {
-    var title = String(doc.title || "").toLowerCase();
-    var body = String(doc.body || "").toLowerCase();
+    var title = normalizeText(doc.title);
+    var body = normalizeText(doc.body);
+    var slug = normalizeText(doc.url.split("/").filter(Boolean).pop() || "");
+    var phrase = tokens.join(" ");
     var score = 0;
 
+    if (phrase && title === phrase) {
+        score += 1000;
+    }
+
+    if (phrase && title.indexOf(phrase) === 0) {
+        score += 500;
+    }
+
+    if (phrase && title.indexOf(phrase) !== -1) {
+        score += 300;
+    }
+
+    if (phrase && slug.indexOf(phrase) !== -1) {
+        score += 220;
+    }
+
     tokens.forEach(function (token) {
-        if (title === token) {
+        if (title === token || slug === token) {
+            score += 220;
+        }
+        if (title.indexOf(token) === 0) {
             score += 120;
         }
         if (title.indexOf(token) !== -1) {
-            score += 40;
+            score += 80;
+        }
+        if (slug.indexOf(token) !== -1) {
+            score += 60;
         }
         if (body.indexOf(token) !== -1) {
-            score += 8;
+            score += 15;
         }
-    });
-
-    if (tokens.length && title.indexOf(tokens.join(" ")) !== -1) {
-        score += 80;
-    }
+    }); 
 
     return score;
 }
 
 function runSearch(term) {
     var tokens = tokenize(term);
-    var lunrMatches = [];
-    var combined = {};
 
     if (!tokens.length) {
         return [];
     }
 
-    try {
-        lunrMatches = idx.search(buildQuery(tokens));
-    } catch (error) {
-        lunrMatches = [];
-    }
-
-    lunrMatches.forEach(function (match) {
-        var ref = String(match.ref);
-        combined[ref] = {
-            ref: ref,
-            score: match.score * 100
-        };
-    });
-
-    documents.forEach(function (doc) {
-        var manualScore = scoreDocument(doc, tokens);
-        if (!manualScore) {
-            return;
-        }
-
-        var ref = String(doc.id);
-        if (combined[ref]) {
-            combined[ref].score += manualScore;
-        } else {
-            combined[ref] = {
-                ref: ref,
-                score: manualScore
+    return documents
+        .map(function (doc) {
+            return {
+                ref: String(doc.id),
+                score: scoreDocument(doc, tokens),
+                date: doc.date || ""
             };
-        }
-    });
-
-    return Object.keys(combined)
-        .map(function (key) { return combined[key]; })
-        .sort(function (a, b) { return b.score - a.score; });
+        })
+        .filter(function (result) {
+            return result.score > 0;
+        })
+        .sort(function (a, b) {
+            if (b.score !== a.score) {
+                return b.score - a.score;
+            }
+            return String(b.date).localeCompare(String(a.date));
+        });
 }
 
 function renderResults(term, results) {
-    searchElements.title.textContent = term ? 'Post results for "' + term + '"' : "Search Tech Treehouse posts";
-    searchElements.count.textContent = results.length ? results.length + " result" + (results.length === 1 ? "" : "s") : "";
     searchElements.list.innerHTML = "";
 
     if (!term) {
-        searchElements.empty.hidden = false;
-        searchElements.empty.innerHTML = "<strong>Start typing to search Tech Treehouse posts.</strong><span>Results will only show blog posts and tutorials.</span>";
         return;
     }
 
     if (!results.length) {
-        searchElements.empty.hidden = false;
-        searchElements.empty.innerHTML = "<strong>No results found.</strong><span>Try fewer words, different keywords, or a broader topic.</span>";
+        searchElements.list.innerHTML = "<li class=\"lunrsearchresult lunrsearchresult-empty\"><div class=\"search-result-link\"><span class=\"title\">No results found</span><span class=\"body\">Try fewer words or a different keyword.</span></div></li>";
         return;
     }
-
-    searchElements.empty.hidden = true;
 
     results.slice(0, 12).forEach(function (result) {
         var doc = documents[Number(result.ref)];
         var item = document.createElement("li");
         item.className = "lunrsearchresult";
+        var snippet = truncateText(doc.body, 180);
+        var tokens = tokenize(term);
         item.innerHTML =
             "<a href=\"" + escapeHtml(doc.url) + "\" class=\"search-result-link\">" +
-                "<span class=\"title\">" + escapeHtml(doc.title || "Untitled") + "</span>" +
-                "<span class=\"body\">" + escapeHtml(truncateText(doc.body, 180)) + "</span>" +
+                "<span class=\"title\">" + highlightText(doc.title || "Untitled", tokens) + "</span>" +
+                "<span class=\"body\">" + highlightText(snippet, tokens) + "</span>" +
                 "<span class=\"url\">" + escapeHtml(doc.url) + "</span>" +
             "</a>";
         searchElements.list.appendChild(item);
@@ -200,10 +213,7 @@ function initializeSearch() {
     searchElements.shell = document.getElementById("lunrsearchresults");
     searchElements.backdrop = document.getElementById("lunrsearch-backdrop");
     searchElements.panel = document.getElementById("lunrsearch-panel");
-    searchElements.title = document.getElementById("lunrsearch-title");
-    searchElements.count = document.getElementById("lunrsearch-count");
     searchElements.list = document.getElementById("lunrsearch-list");
-    searchElements.empty = document.getElementById("lunrsearch-empty");
 
     if (!searchElements.trigger || !searchElements.input || !searchElements.shell) {
         return;
