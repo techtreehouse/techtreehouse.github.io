@@ -32,6 +32,7 @@ var searchElements = {
     list: null,
     empty: null
 };
+var searchPanelOpen = false;
 
 function escapeHtml(value) {
     return String(value)
@@ -50,16 +51,83 @@ function truncateText(text, length) {
     return normalized.slice(0, length).trim() + "...";
 }
 
-function buildQuery(term) {
-    var cleaned = term.trim().toLowerCase();
-    if (!cleaned) {
-        return "";
+function tokenize(term) {
+    return term.trim().toLowerCase().split(/\s+/).filter(Boolean);
+}
+
+function buildQuery(tokens) {
+    return tokens.map(function (token) {
+        return token + "*";
+    }).join(" ");
+}
+
+function scoreDocument(doc, tokens) {
+    var title = String(doc.title || "").toLowerCase();
+    var body = String(doc.body || "").toLowerCase();
+    var score = 0;
+
+    tokens.forEach(function (token) {
+        if (title === token) {
+            score += 120;
+        }
+        if (title.indexOf(token) !== -1) {
+            score += 40;
+        }
+        if (body.indexOf(token) !== -1) {
+            score += 8;
+        }
+    });
+
+    if (tokens.length && title.indexOf(tokens.join(" ")) !== -1) {
+        score += 80;
     }
 
-    var tokens = cleaned.split(/\s+/).filter(Boolean);
-    return tokens.map(function (token) {
-        return token + "* " + token + "~1";
-    }).join(" ");
+    return score;
+}
+
+function runSearch(term) {
+    var tokens = tokenize(term);
+    var lunrMatches = [];
+    var combined = {};
+
+    if (!tokens.length) {
+        return [];
+    }
+
+    try {
+        lunrMatches = idx.search(buildQuery(tokens));
+    } catch (error) {
+        lunrMatches = [];
+    }
+
+    lunrMatches.forEach(function (match) {
+        var ref = String(match.ref);
+        combined[ref] = {
+            ref: ref,
+            score: match.score * 100
+        };
+    });
+
+    documents.forEach(function (doc) {
+        var manualScore = scoreDocument(doc, tokens);
+        if (!manualScore) {
+            return;
+        }
+
+        var ref = String(doc.id);
+        if (combined[ref]) {
+            combined[ref].score += manualScore;
+        } else {
+            combined[ref] = {
+                ref: ref,
+                score: manualScore
+            };
+        }
+    });
+
+    return Object.keys(combined)
+        .map(function (key) { return combined[key]; })
+        .sort(function (a, b) { return b.score - a.score; });
 }
 
 function renderResults(term, results) {
@@ -96,15 +164,20 @@ function renderResults(term, results) {
 }
 
 function openSearchPanel() {
+    if (searchPanelOpen) {
+        return;
+    }
+
+    searchPanelOpen = true;
     searchElements.shell.hidden = false;
     document.body.classList.add("search-open");
     window.setTimeout(function () {
         searchElements.input.focus();
-        searchElements.input.select();
     }, 20);
 }
 
 function closeSearchPanel() {
+    searchPanelOpen = false;
     searchElements.shell.hidden = true;
     document.body.classList.remove("search-open");
 }
@@ -113,21 +186,8 @@ function performSearch(term) {
     var cleaned = term.trim();
     var results = [];
 
-    openSearchPanel();
-
     if (cleaned) {
-        try {
-            results = idx.search(buildQuery(cleaned));
-        } catch (error) {
-            results = idx.query(function (query) {
-                cleaned.split(/\s+/).filter(Boolean).forEach(function (token) {
-                    query.term(token.toLowerCase(), {
-                        fields: ["title", "body"],
-                        wildcard: lunr.Query.wildcard.TRAILING
-                    });
-                });
-            });
-        }
+        results = runSearch(cleaned);
     }
 
     renderResults(cleaned, results);

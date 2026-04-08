@@ -926,7 +926,7 @@ h1, h2, h3, h4, h5, h6 {
   overflow: hidden;
   border-radius: 26px;
   border: 1px solid rgba(255, 255, 255, 0.7);
-  background: rgba(248, 250, 252, 0.9);
+  background: rgba(244, 247, 251, 0.94);
   box-shadow: 0 40px 120px rgba(8, 15, 25, 0.3);
   backdrop-filter: blur(28px) saturate(1.2);
 }
@@ -953,9 +953,9 @@ h1, h2, h3, h4, h5, h6 {
   min-height: 54px;
   padding: 0 1rem;
   border-radius: 16px;
-  border: 1px solid rgba(15, 23, 42, 0.1);
-  background: rgba(255, 255, 255, 0.82);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  background: rgba(255, 255, 255, 0.98);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.06), inset 0 1px 0 rgba(255, 255, 255, 0.85);
 }
 
 .lunr-search-input {
@@ -968,10 +968,16 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.25rem;
   font-weight: 600;
   letter-spacing: -0.02em;
+  padding: 0;
 }
 
 .lunr-search-input::placeholder {
-  color: #7b8798;
+  color: #8a96a8;
+}
+
+.lunr-search-input-wrap:focus-within {
+  border-color: rgba(15, 157, 122, 0.38);
+  box-shadow: 0 0 0 4px rgba(15, 157, 122, 0.08), 0 14px 30px rgba(15, 23, 42, 0.08);
 }
 
 .lunr-search-header {
@@ -1050,8 +1056,8 @@ h1, h2, h3, h4, h5, h6 {
   display: block;
   padding: 0.95rem 1rem;
   border-radius: 18px;
-  background: transparent;
-  border: 1px solid transparent;
+  background: rgba(255, 255, 255, 0.42);
+  border: 1px solid rgba(255, 255, 255, 0.4);
   transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 }
 
@@ -1059,8 +1065,8 @@ h1, h2, h3, h4, h5, h6 {
 .search-result-link:focus {
   text-decoration: none;
   transform: translateY(-1px);
-  background: rgba(255, 255, 255, 0.7);
-  border-color: rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(15, 157, 122, 0.14);
 }
 
 .lunrsearchresult .title {
@@ -1093,7 +1099,7 @@ h1, h2, h3, h4, h5, h6 {
   padding: 1.2rem;
   margin: 0.35rem;
   border-radius: 18px;
-  background: rgba(255, 255, 255, 0.55);
+  background: rgba(255, 255, 255, 0.72);
   color: var(--text-main);
 }
 
