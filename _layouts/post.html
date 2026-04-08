@@ -7,23 +7,24 @@ post_class: post-template
 
 <!-- Begin Article
 ================================================== -->
-<div class="container">
+<div class="post-shell">
     <div class="row">
 
         <!-- Post Share -->
-        <div class="col-md-2 pl-0">
+        <aside class="col-lg-2 pl-0 d-none d-lg-block">
             {% include share.html %}
-        </div>
+        </aside>
 
         <!-- Post -->
         {% assign author = site.authors[page.author] %}
 
-        <div class="col-md-9 flex-first flex-md-unordered">
-            <div class="mainheading">
+        <article class="col-lg-10 flex-first flex-md-unordered">
+            <div class="post-article-shell">
+            <div class="post-heading">
 
                 <!-- Author Box -->
                 {% if page.author %}
-                <div class="row post-top-meta">
+                <div class="row post-top-meta post-top-meta-modern">
                     <div class="col-xs-12 col-md-3 col-lg-2 text-center text-md-left mb-4 mb-md-0">
                         {% if author.avatar %}
                         <img class="author-thumb" src="{{site.baseurl}}/{{ author.avatar }}" alt="{{ author.display_name }}">
@@ -32,7 +33,7 @@ post_class: post-template
                         {% endif %}
                     </div>
                     <div class="col-xs-12 col-md-9 col-lg-10 text-center text-md-left">
-                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a><a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>
+                        <a target="_blank" class="link-dark" href="{{ author.web }}">{{ author.display_name }}</a>{% if author.twitter %}<a target="_blank" href="{{ author.twitter }}" class="btn follow">Follow</a>{% endif %}
                         <span class="author-description">{{ author.description }}</span>
                     </div>
                 </div>
@@ -62,7 +63,7 @@ post_class: post-template
             <!-- End Featured Image -->
 
             <!-- Post Content -->
-            <div class="article-post">
+            <div class="article-post article-surface">
                 <!-- Toc if any -->
                 {% if page.toc %}
                     {% if page.beforetoc %}
@@ -85,7 +86,7 @@ post_class: post-template
             {% endif %}
 
             <!-- Post Date -->
-            <p>
+            <p class="post-meta-line">
             <small>
                 <span class="post-date"><time class="post-date" datetime="{{ page.date | date:"%Y-%m-%d" }}">{{ page.date | date_to_string }}</time></span>           
                 {% if page.last_modified_at %}
@@ -95,7 +96,7 @@ post_class: post-template
             </p>
 
             <!-- Post Categories -->
-            <div class="after-post-cats">
+            <div class="after-post-cats chip-section">
                 <ul class="tags mb-4">
                     {% assign sortedCategories = page.categories | sort %}
                     {% for category in sortedCategories %}
@@ -108,7 +109,7 @@ post_class: post-template
             <!-- End Categories -->
 
             <!-- Post Tags -->
-            <div class="after-post-tags">
+            <div class="after-post-tags chip-section">
                 <ul class="tags">
                     {% assign sortedTags = page.tags | sort %}
                     {% for tag in sortedTags %}
@@ -131,8 +132,8 @@ post_class: post-template
             <div class="clearfix"></div>
             </div>
             <!-- End Categories -->
-
-        </div>
+            </div>
+        </article>
         <!-- End Post -->
 
     </div>
@@ -143,9 +144,9 @@ post_class: post-template
 <!-- Begin Comments
 ================================================== -->
 {% if page.comments != false %}
-    <div class="container">
+    <div class="post-comments-shell">
         <div id="comments" class="row justify-content-center mb-5">
-            <div class="col-md-8">
+            <div class="col-md-10">
                 {% include disqus.html %}
             </div>
         </div>

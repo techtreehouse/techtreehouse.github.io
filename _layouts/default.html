@@ -101,7 +101,8 @@
 <!-- Site Title
 ================================================== -->
 {% assign featured_posts = site.posts | where: "featured", true %}
-<div class="mainheading">
+{% if page.url == "/" %}
+<div class="mainheading mainheading-home">
     <div class="hero-copy">
         <span class="hero-kicker">Tech tutorials, tips and smart shortcuts</span>
         <h1 class="sitetitle">{{ site.name }}</h1>
@@ -133,6 +134,25 @@
         <p class="hero-panel-note">Built for curious learners who want practical, easy-to-follow tech help.</p>
     </div>
 </div>
+{% else %}
+<div class="mainheading mainheading-interior">
+    <div class="interior-hero">
+        <span class="hero-kicker">Tech Treehouse</span>
+        <h1 class="sitetitle">{{ page.title | default: site.name }}</h1>
+        <p class="lead">
+            {% if page.description %}
+                {{ page.description }}
+            {% elsif page.layout == "post" %}
+                Practical walkthroughs, quick wins, and useful tech knowledge in a cleaner reading experience.
+            {% elsif page.layout == "page" %}
+                Learn more about {{ site.name }} and explore curated tech resources.
+            {% else %}
+                Browse articles, archives, and topic collections across {{ site.name }}.
+            {% endif %}
+        </p>
+    </div>
+</div>
+{% endif %}
 
 <!-- Content
 ================================================== -->

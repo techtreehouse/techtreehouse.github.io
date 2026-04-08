@@ -2,22 +2,33 @@
 title: "Categories"
 layout: default
 permalink: "/categories.html"
+description: "Browse Tech Treehouse tutorials by category to quickly find the topics you care about most."
 ---
 
-<div class="row listrecent">
+<section class="taxonomy-shell">
+<div class="taxonomy-grid">
 {% for category in site.categories %}
-<div class="section-title col-md-12 mt-4">
-<h2 id="{{ category[0] | replace: " ","-" }}"><span class="text-capitalize">{{ category[0] }}</span></h2>
-</div>
-{% assign pages_list = category[1] %}
-{% for post in pages_list %}
-{% if post.title != null %}
-{% if group == null or group == post.group %}
-{% include postbox.html %}
-{% endif %}
-{% endif %}
+<section class="taxonomy-group" id="{{ category[0] | replace: " ","-" }}">
+    <div class="taxonomy-header">
+        <div>
+            <p class="taxonomy-label">Category</p>
+            <h2><span class="text-capitalize">{{ category[0] }}</span></h2>
+        </div>
+        <span class="taxonomy-count">{{ category[1].size }} articles</span>
+    </div>
+    <div class="row listrecent">
+        {% assign pages_list = category[1] %}
+        {% for post in pages_list %}
+        {% if post.title != null %}
+        {% if group == null or group == post.group %}
+        {% include postbox.html %}
+        {% endif %}
+        {% endif %}
+        {% endfor %}
+        {% assign pages_list = nil %}
+        {% assign group = nil %}
+    </div>
+</section>
 {% endfor %}
-{% assign pages_list = nil %}
-{% assign group = nil %}
-{% endfor %}
 </div>
+</section>
