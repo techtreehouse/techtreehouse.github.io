@@ -2,8 +2,8 @@
 {% assign author = site.authors[post.author] %}
 
 <div class="col-lg-4 col-md-6 mb-30px card-group">
-    <div class="card h-100">
-        <div class="maxthumb">
+    <article class="card h-100 post-card">
+        <div class="maxthumb post-card-media">
             <a href="{{ site.baseurl }}{{ post.url }}">
                 {% if post.image %}
 
@@ -16,7 +16,13 @@
                 {% endif %}
             </a>
         </div>
-        <div class="card-body">
+        <div class="card-body post-card-body">
+            <div class="post-card-meta">
+                {% for category in post.categories limit:1 %}
+                <span class="post-card-tag">{{ category }}</span>
+                {% endfor %}
+                <span class="post-card-date">{{ post.date | date: "%b %-d, %Y" }}</span>
+            </div>
             <h2 class="card-title">
                 <a class="text-dark" href="{{ site.baseurl }}{{ post.url }}">{{ post.title }}</a>
                 {% if post.rating %}
@@ -26,8 +32,9 @@
                 {% endif %}
             </h2>
             <h4 class="card-text">{{ post.excerpt | strip_html | truncatewords:30 }}</h4>
+            <a class="post-card-link" href="{{ site.baseurl }}{{ post.url }}">Read article</a>
         </div>
-        <div class="card-footer bg-white">
+        <div class="card-footer bg-white post-card-footer">
             <div class="wrapfooter">
                 {% if post.author %}
                 <span class="meta-footer-thumb">
@@ -46,6 +53,6 @@
                 <div class="clearfix"></div>
             </div>
         </div>
-    </div>
+    </article>
 </div>
 <!-- end post -->

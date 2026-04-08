@@ -4,6 +4,9 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <link rel="icon" href="{{ site.baseurl }}/{{ site.logo }}">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;700;800&family=Fraunces:opsz,wght@9..144,600;9..144,700&display=swap" rel="stylesheet">
 
 <title>{{ page.title }} | {{site.name}}</title>
 
@@ -26,11 +29,10 @@
 
 {% capture layout %}{% if page.layout %}layout-{{ page.layout }}{% endif %}{% endcapture %}
 <body class="{{layout}}">
-	<!-- defer loading of font and font awesome -->
-	<noscript id="deferred-styles">
-		<link href="https://fonts.googleapis.com/css?family=Righteous%7CMerriweather:300,300i,400,400i,700,700i" rel="stylesheet">
-		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-	</noscript>
+    <!-- defer loading of font awesome -->
+    <noscript id="deferred-styles">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+    </noscript>
 
 <!-- Begin Menu Navigation
 ================================================== -->
@@ -74,74 +76,10 @@
                 <a target="_blank" class="nav-link" href="https://buymeacoffee.com/techtreehouse"><i class="fas fa-coffee"></i> Buy me a coffee!</a>
                 </li>
 
-<li class="nav-item">
-<div>
-<input class="custom-control-input" type="checkbox" id="darkSwitch" hidden="">
-<label class="custom-control-label nav-link" id="thelabel" for="darkSwitch" tabindex="0"> Dark Mode</label>
-</div>
-<script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
-</li>
-		    
-<style>
-.custom-control-label::before {
-    display: none !important;
-}
-.custom-control-label::after {
-    display: none !important;
-}
-/*.form-switch .custom-control-input .custom-control-label::before .custom-control-label::after .nav-link {
-    --bs-form-switch-bg: url(data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='-4 -4 8 8'%3e%3ccircle r='3' fill='rgba%280, 0, 0, 0.25%29'/%3e%3c/svg%3e);
-    width: 2em;
-    margin-left: -2.5em;
-    background-image: var(--bs-form-switch-bg);
-    background-position: left center;
-    border-radius: 2em;
-    transition: background-position .15s ease-in-out;
-}
-
-.custom-control-input[type=checkbox] .custom-control-label::before[type=checkbox] .custom-control-label::after[type=checkbox] .nav-link[type=checkbox] {
-    border-radius: .25em;
-}
-.form-check .custom-control-input .custom-control-label::before .custom-control-label::after .nav-link{
-    float: left;
-    margin-left: -1.5em;
-}
-.custom-control-input .custom-control-label::before .custom-control-label::after .nav-link{
-    --bs-form-check-bg: var(--bs-body-bg);
-    flex-shrink: 0;
-    width: 1em;
-    height: 1em;
-    margin-top: .25em;
-    vertical-align: top;
-    -webkit-appearance: none;
-    -moz-appearance: none;
-    appearance: none;
-    background-color: var(--bs-form-check-bg);
-    background-image: var(--bs-form-check-bg-image);
-    background-repeat: no-repeat;
-    background-position: center;
-    background-size: contain;
-    border: var(--bs-border-width) solid var(--bs-border-color);
-    -webkit-print-color-adjust: exact;
-    color-adjust: exact;
-    print-color-adjust: exact;
-}*/
-[hidden] {
-    display: none !important;
-}
-label {
-    display: inline-block;
-}
-.custom-control-label {
-    display: inline-block;
-}
-*, ::after, ::before {
-    box-sizing: border-box;
-}
-label {
-    cursor: pointer;
-}
-</style>
+                <li class="nav-item nav-theme-toggle">
+                    <input class="custom-control-input" type="checkbox" id="darkSwitch" hidden>
+                    <label class="custom-control-label nav-link" id="thelabel" for="darkSwitch" tabindex="0">Dark Mode</label>
+                </li>
 		    
                 {% include search-lunr.html %}
 
@@ -162,11 +100,38 @@ label {
 
 <!-- Site Title
 ================================================== -->
+{% assign featured_posts = site.posts | where: "featured", true %}
 <div class="mainheading">
-    <h1 class="sitetitle">{{ site.name }}</h1>
-    <p class="lead">
-        {{ site.description }}
-    </p>
+    <div class="hero-copy">
+        <span class="hero-kicker">Tech tutorials, tips and smart shortcuts</span>
+        <h1 class="sitetitle">{{ site.name }}</h1>
+        <p class="lead">
+            {{ site.description }}
+        </p>
+        <div class="hero-actions">
+            <a class="hero-button hero-button-primary" href="{{ site.baseurl }}/categories">Browse tutorials</a>
+            <a class="hero-button hero-button-secondary" target="_blank" href="https://youtube.com/@techtreehouse">Watch on YouTube</a>
+        </div>
+    </div>
+    <div class="hero-panel">
+        <div class="hero-panel-glow"></div>
+        <p class="hero-panel-label">What you'll find</p>
+        <div class="hero-stats">
+            <div class="hero-stat">
+                <strong>{{ site.posts | size }}+</strong>
+                <span>Guides and walkthroughs</span>
+            </div>
+            <div class="hero-stat">
+                <strong>{{ featured_posts | size }}</strong>
+                <span>Featured deep dives</span>
+            </div>
+            <div class="hero-stat">
+                <strong>{{ site.categories | size }}</strong>
+                <span>Topics to explore</span>
+            </div>
+        </div>
+        <p class="hero-panel-note">Built for curious learners who want practical, easy-to-follow tech help.</p>
+    </div>
 </div>
 
 <!-- Content
@@ -199,7 +164,11 @@ label {
 	<div class="d-md-flex h-100">
 		<div class="col-md-4 transpdark align-self-center text-center h-100">
             <div class="d-md-flex align-items-center justify-content-center h-100">
-                <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore <span class="d-none d-md-inline">→</span></h2>
+                <div class="fortags-intro">
+                    <p class="fortags-kicker">Discover more</p>
+                    <h2 class="d-md-block align-self-center py-1 font-weight-light">Explore by topic</h2>
+                    <p>Jump straight into the tutorials, tools, and experiments that match what you want to learn next.</p>
+                </div>
             </div>
 		</div>
 		<div class="col-md-8 p-5 align-self-center text-center">
@@ -225,6 +194,11 @@ label {
                 <div class="row">
                     <div class="col-md-6 col-sm-6 text-center text-lg-left">
                         Copyright © {{ site.time | date: "%Y" }} {{ site.name }}
+                    </div>
+                    <div class="col-md-6 col-sm-6 text-center text-lg-right footer-links">
+                        <a href="{{ site.baseurl }}/about">About</a>
+                        <a href="{{ site.baseurl }}/categories">Categories</a>
+                        <a target="_blank" href="https://youtube.com/@techtreehouse">YouTube</a>
                     </div>
                 </div>
             </div>
@@ -256,6 +230,7 @@ label {
     {% if page.layout == 'post' %}
     <script id="dsq-count-scr" src="//{{site.disqus}}.disqus.com/count.js"></script>
     {% endif %}
+    <script src="{{ site.baseurl }}/dark-mode-switch.min.js"></script>
 
 </body>
 
