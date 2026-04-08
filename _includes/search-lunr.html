@@ -1,33 +1,45 @@
 <script src="{{site.baseurl}}/assets/js/lunr.js"></script>
 
-<form class="bd-search site-search-form" id="lunrsearchform">
-    <label class="sr-only" for="lunrsearch">Search articles</label>
+<button type="button" class="bd-search site-search-trigger" id="lunrsearch-trigger" aria-haspopup="dialog" aria-controls="lunrsearchresults" aria-label="Open search">
     <span class="site-search-icon" aria-hidden="true">
         <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2">
             <circle cx="11" cy="11" r="7"></circle>
             <path d="M20 20l-3.5-3.5"></path>
         </svg>
     </span>
-    <input type="text" class="form-control text-small launch-modal-search" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Search tutorials, topics, and posts..." autocomplete="off"/>
-</form>
+    <span class="site-search-trigger-label">Search</span>
+    <span class="site-search-trigger-hint">/</span>
+</button>
 
 <div id="lunrsearchresults" class="lunr-search-shell" hidden>
     <div id="lunrsearch-backdrop" class="lunr-search-backdrop"></div>
     <div id="lunrsearch-panel" class="lunr-search-panel" role="dialog" aria-modal="true" aria-labelledby="lunrsearch-title">
-        <div class="lunr-search-header">
-            <div>
-                <p class="lunr-search-kicker">Site Search</p>
-                <h3 id="lunrsearch-title">Search the site</h3>
-                <p id="lunrsearch-count" class="lunr-search-count"></p>
+        <div class="lunr-search-commandbar">
+            <span class="lunr-search-command-icon" aria-hidden="true">
+                <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2">
+                    <circle cx="11" cy="11" r="7"></circle>
+                    <path d="M20 20l-3.5-3.5"></path>
+                </svg>
+            </span>
+            <label class="sr-only" for="lunrsearch">Search</label>
+            <div class="lunr-search-input-wrap">
+                <input type="text" class="lunr-search-input" id="lunrsearch" name="q" maxlength="255" value="" placeholder="Type to search posts and tutorials..." autocomplete="off"/>
             </div>
             <button type="button" id="lunrsearch-close" class="lunr-search-close" aria-label="Close search">
-                <span aria-hidden="true">&times;</span>
+                <span class="lunr-search-close-key">esc</span>
             </button>
+        </div>
+        <div class="lunr-search-header">
+            <div>
+                <p class="lunr-search-kicker">Spotlight Search</p>
+                <h3 id="lunrsearch-title">Search Tech Treehouse</h3>
+            </div>
+            <p id="lunrsearch-count" class="lunr-search-count"></p>
         </div>
         <div class="lunr-search-body">
             <div id="lunrsearch-empty" class="lunr-search-empty">
-                <strong>Start typing to search Tech Treehouse.</strong>
-                <span>Find tutorials, tips, and older posts quickly.</span>
+                <strong>Start typing to search Tech Treehouse posts.</strong>
+                <span>Only article and tutorial posts will appear here.</span>
             </div>
             <ul id="lunrsearch-list" class="lunr-search-list"></ul>
         </div>

@@ -856,27 +856,49 @@ h1, h2, h3, h4, h5, h6 {
   box-shadow: none;
 }
 
-.site-search-form {
+.site-search-trigger {
   position: relative;
-  min-width: 280px;
-}
-
-.site-search-form .form-control {
-  min-height: 48px;
-  padding-left: 2.75rem;
-  padding-right: 1rem;
+  min-width: 220px;
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.7rem;
+  padding: 0.7rem 0.9rem;
   border-radius: 999px;
-  font-weight: 600;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--text-soft);
+  font-weight: 700;
+  box-shadow: none;
 }
 
 .site-search-icon {
-  position: absolute;
-  left: 0.95rem;
-  top: 50%;
-  transform: translateY(-50%);
   color: var(--text-soft);
-  z-index: 2;
   display: inline-flex;
+}
+
+.site-search-trigger-label {
+  flex: 1 1 auto;
+  text-align: left;
+}
+
+.site-search-trigger-hint {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 28px;
+  height: 28px;
+  border-radius: 8px;
+  background: rgba(15, 23, 42, 0.06);
+  color: var(--text-soft);
+  font-size: 0.82rem;
+  font-weight: 800;
+  text-transform: uppercase;
+}
+
+.site-search-trigger:hover {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--text-main);
 }
 
 .lunr-search-shell[hidden] {
@@ -898,24 +920,66 @@ h1, h2, h3, h4, h5, h6 {
 
 .lunr-search-panel {
   position: relative;
-  width: min(860px, calc(100vw - 2rem));
-  max-height: min(78vh, 820px);
-  margin: 6.5rem auto 0;
+  width: min(720px, calc(100vw - 2rem));
+  max-height: min(72vh, 760px);
+  margin: 8vh auto 0;
   overflow: hidden;
-  border-radius: 28px;
+  border-radius: 26px;
   border: 1px solid rgba(255, 255, 255, 0.7);
-  background: rgba(255, 255, 255, 0.92);
-  box-shadow: 0 30px 90px rgba(8, 15, 25, 0.26);
-  backdrop-filter: blur(18px);
+  background: rgba(248, 250, 252, 0.9);
+  box-shadow: 0 40px 120px rgba(8, 15, 25, 0.3);
+  backdrop-filter: blur(28px) saturate(1.2);
+}
+
+.lunr-search-commandbar {
+  display: flex;
+  align-items: center;
+  gap: 0.9rem;
+  padding: 1rem 1.15rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.lunr-search-command-icon {
+  color: var(--text-soft);
+  display: inline-flex;
+  flex: 0 0 auto;
+}
+
+.lunr-search-input-wrap {
+  flex: 1 1 auto;
+  min-width: 0;
+  display: flex;
+  align-items: center;
+  min-height: 54px;
+  padding: 0 1rem;
+  border-radius: 16px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.7);
+}
+
+.lunr-search-input {
+  flex: 1 1 auto;
+  min-width: 0;
+  border: 0;
+  outline: 0;
+  background: transparent;
+  color: var(--text-main);
+  font-size: 1.25rem;
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.lunr-search-input::placeholder {
+  color: #7b8798;
 }
 
 .lunr-search-header {
   display: flex;
-  align-items: flex-start;
+  align-items: center;
   justify-content: space-between;
   gap: 1rem;
-  padding: 1.35rem 1.35rem 1rem;
-  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 0.9rem 1.15rem 0.8rem;
 }
 
 .lunr-search-kicker {
@@ -930,30 +994,44 @@ h1, h2, h3, h4, h5, h6 {
 .lunr-search-header h3 {
   margin: 0;
   font-family: "Fraunces", serif;
-  font-size: 1.7rem;
+  font-size: 1.2rem;
 }
 
 .lunr-search-count {
-  margin: 0.3rem 0 0;
+  margin: 0;
   color: var(--text-soft);
   font-weight: 700;
+  font-size: 0.92rem;
 }
 
 .lunr-search-close {
-  width: 44px;
-  height: 44px;
+  flex: 0 0 auto;
+  padding: 0;
   border: 0;
-  border-radius: 999px;
-  background: rgba(15, 23, 42, 0.06);
-  color: var(--text-main);
-  font-size: 1.8rem;
-  line-height: 1;
+  background: transparent;
+  color: var(--text-soft);
+}
+
+.lunr-search-close-key {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 38px;
+  height: 30px;
+  padding: 0 0.55rem;
+  border-radius: 10px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.6);
+  font-size: 0.76rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .lunr-search-body {
   overflow: auto;
-  max-height: calc(78vh - 110px);
-  padding: 1rem 1.35rem 1.35rem;
+  max-height: calc(72vh - 110px);
+  padding: 0.25rem 0.7rem 0.8rem;
 }
 
 .lunr-search-list {
@@ -970,40 +1048,41 @@ h1, h2, h3, h4, h5, h6 {
 
 .search-result-link {
   display: block;
-  padding: 1rem 1.05rem;
-  border-radius: 20px;
-  background: rgba(15, 23, 42, 0.03);
-  border: 1px solid rgba(15, 23, 42, 0.06);
+  padding: 0.95rem 1rem;
+  border-radius: 18px;
+  background: transparent;
+  border: 1px solid transparent;
   transition: transform 0.18s ease, border-color 0.18s ease, background 0.18s ease;
 }
 
 .search-result-link:hover,
 .search-result-link:focus {
   text-decoration: none;
-  transform: translateY(-2px);
-  background: rgba(15, 157, 122, 0.06);
-  border-color: rgba(15, 157, 122, 0.16);
+  transform: translateY(-1px);
+  background: rgba(255, 255, 255, 0.7);
+  border-color: rgba(15, 23, 42, 0.08);
 }
 
 .lunrsearchresult .title {
   display: block;
   color: var(--text-main);
-  font-size: 1.05rem;
-  font-weight: 800;
-  margin-bottom: 0.35rem;
+  font-size: 1rem;
+  font-weight: 750;
+  margin-bottom: 0.2rem;
 }
 
 .lunrsearchresult .body {
   display: block;
   color: var(--text-soft);
-  line-height: 1.65;
-  margin-bottom: 0.55rem;
+  line-height: 1.55;
+  margin-bottom: 0.35rem;
+  font-size: 0.92rem;
 }
 
 .lunrsearchresult .url {
   display: block;
-  color: var(--accent-strong);
-  font-size: 0.82rem;
+  color: #6d7a8d;
+  font-size: 0.78rem;
   font-weight: 700;
   word-break: break-all;
 }
@@ -1011,9 +1090,10 @@ h1, h2, h3, h4, h5, h6 {
 .lunr-search-empty {
   display: grid;
   gap: 0.35rem;
-  padding: 1.25rem;
-  border-radius: 22px;
-  background: linear-gradient(135deg, rgba(15, 157, 122, 0.07), rgba(255, 184, 77, 0.08));
+  padding: 1.2rem;
+  margin: 0.35rem;
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.55);
   color: var(--text-main);
 }
 
@@ -1097,9 +1177,15 @@ body.search-open {
 [data-theme="dark"] .lunr-search-panel,
 [data-theme="dark"] .search-result-link,
 [data-theme="dark"] .lunr-search-empty,
-[data-theme="dark"] .lunr-search-close {
+[data-theme="dark"] .lunr-search-close-key {
   background: rgba(10, 19, 31, 0.94) !important;
   border-color: var(--surface-border) !important;
+}
+
+[data-theme="dark"] .lunr-search-input-wrap {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: var(--surface-border) !important;
+  box-shadow: none;
 }
 
 [data-theme="dark"] .search-result-link:hover,
@@ -1107,9 +1193,21 @@ body.search-open {
   background: rgba(15, 157, 122, 0.08) !important;
 }
 
+[data-theme="dark"] .site-search-trigger,
+[data-theme="dark"] .site-search-trigger-hint {
+  background: rgba(255, 255, 255, 0.04) !important;
+  border-color: var(--surface-border) !important;
+  color: var(--text-soft) !important;
+}
+
+[data-theme="dark"] .lunr-search-input {
+  color: var(--text-main) !important;
+}
+
 [data-theme="dark"] .lunrsearchresult .title,
 [data-theme="dark"] .lunr-search-header h3,
-[data-theme="dark"] .lunr-search-close {
+[data-theme="dark"] .lunr-search-close,
+[data-theme="dark"] .lunr-search-close-key {
   color: var(--text-main) !important;
 }
 
@@ -1131,7 +1229,7 @@ body.search-open {
     padding: 1.3rem;
   }
 
-  .site-search-form {
+  .site-search-trigger {
     min-width: 100%;
   }
 }
@@ -1164,14 +1262,20 @@ body.search-open {
 
   .lunr-search-panel {
     width: calc(100vw - 1rem);
-    margin-top: 5rem;
+    margin-top: 4.5rem;
     border-radius: 22px;
   }
 
+  .lunr-search-commandbar,
   .lunr-search-header,
   .lunr-search-body {
     padding-left: 1rem;
     padding-right: 1rem;
+  }
+
+  .lunr-search-header {
+    align-items: flex-start;
+    flex-direction: column;
   }
 
   .footer {

@@ -4,17 +4,7 @@ sitemap: false
 ---
 
 {% assign counter = 0 %}
-var documents = [{% for page in site.pages %}{% if page.url contains '.xml' or page.url contains 'assets' or page.url contains 'category' or page.url contains 'tag' %}{% else %}{
-    "id": {{ counter }},
-    "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
-    "title": "{{ page.title | default: site.name | replace: '"', ' ' }}",
-    "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"
-    }{% assign counter = counter | plus: 1 %}{% unless forloop.last and site.without-plugin == empty and site.posts == empty %}, {% endunless %}{% endif %}{% endfor %}{% for page in site.without-plugin %}{
-    "id": {{ counter }},
-    "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
-    "title": "{{ page.title | default: site.name | replace: '"', ' ' }}",
-    "body": "{{ page.content | markdownify | replace: '.', '. ' | replace: '</h2>', ': ' | replace: '</h3>', ': ' | replace: '</h4>', ': ' | replace: '</p>', ' ' | strip_html | strip_newlines | replace: '  ', ' ' | replace: '"', ' ' }}"
-    }{% assign counter = counter | plus: 1 %}, {% endfor %}{% for page in site.posts %}{
+var documents = [{% for page in site.posts %}{
     "id": {{ counter }},
     "url": "{{ site.url }}{{site.baseurl}}{{ page.url }}",
     "title": "{{ page.title | replace: '"', ' ' }}",
@@ -32,7 +22,7 @@ var idx = lunr(function () {
 });
 
 var searchElements = {
-    form: null,
+    trigger: null,
     input: null,
     shell: null,
     backdrop: null,
@@ -73,13 +63,13 @@ function buildQuery(term) {
 }
 
 function renderResults(term, results) {
-    searchElements.title.textContent = term ? 'Search results for "' + term + '"' : "Search the site";
+    searchElements.title.textContent = term ? 'Post results for "' + term + '"' : "Search Tech Treehouse posts";
     searchElements.count.textContent = results.length ? results.length + " result" + (results.length === 1 ? "" : "s") : "";
     searchElements.list.innerHTML = "";
 
     if (!term) {
         searchElements.empty.hidden = false;
-        searchElements.empty.innerHTML = "<strong>Start typing to search Tech Treehouse.</strong><span>Find tutorials, tips, and older posts quickly.</span>";
+        searchElements.empty.innerHTML = "<strong>Start typing to search Tech Treehouse posts.</strong><span>Results will only show blog posts and tutorials.</span>";
         return;
     }
 
@@ -108,6 +98,10 @@ function renderResults(term, results) {
 function openSearchPanel() {
     searchElements.shell.hidden = false;
     document.body.classList.add("search-open");
+    window.setTimeout(function () {
+        searchElements.input.focus();
+        searchElements.input.select();
+    }, 20);
 }
 
 function closeSearchPanel() {
@@ -141,7 +135,7 @@ function performSearch(term) {
 }
 
 function initializeSearch() {
-    searchElements.form = document.getElementById("lunrsearchform");
+    searchElements.trigger = document.getElementById("lunrsearch-trigger");
     searchElements.input = document.getElementById("lunrsearch");
     searchElements.shell = document.getElementById("lunrsearchresults");
     searchElements.backdrop = document.getElementById("lunrsearch-backdrop");
@@ -151,16 +145,11 @@ function initializeSearch() {
     searchElements.list = document.getElementById("lunrsearch-list");
     searchElements.empty = document.getElementById("lunrsearch-empty");
 
-    if (!searchElements.form || !searchElements.input || !searchElements.shell) {
+    if (!searchElements.trigger || !searchElements.input || !searchElements.shell) {
         return;
     }
 
-    searchElements.form.addEventListener("submit", function (event) {
-        event.preventDefault();
-        performSearch(searchElements.input.value);
-    });
-
-    searchElements.input.addEventListener("focus", function () {
+    searchElements.trigger.addEventListener("click", function () {
         openSearchPanel();
         renderResults(searchElements.input.value.trim(), []);
     });
@@ -173,6 +162,15 @@ function initializeSearch() {
     document.getElementById("lunrsearch-close").addEventListener("click", closeSearchPanel);
 
     document.addEventListener("keydown", function (event) {
+        var isTypingField = /input|textarea|select/i.test(document.activeElement && document.activeElement.tagName);
+
+        if ((event.key === "/" || (event.key.toLowerCase() === "k" && (event.metaKey || event.ctrlKey))) && !isTypingField) {
+            event.preventDefault();
+            openSearchPanel();
+            renderResults(searchElements.input.value.trim(), []);
+            return;
+        }
+
         if (event.key === "Escape" && !searchElements.shell.hidden) {
             closeSearchPanel();
         }
